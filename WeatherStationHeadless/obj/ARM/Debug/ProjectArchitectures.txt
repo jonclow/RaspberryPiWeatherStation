@@ -1,0 +1,1 @@
+D:\Jonathan Clow\RaspberryPiProjects\WeatherStationHeadless\WeatherStationHeadless\WeatherStationHeadless.csproj;arm

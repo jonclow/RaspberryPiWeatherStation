@@ -1,0 +1,11 @@
+/out:"D:\Jonathan Clow\RaspberryPiProjects\WeatherStationHeadless\WeatherStationHeadless\obj\ARM\Release\ilc\intermediate\SgGenerated\\"
+/int:"D:\Jonathan Clow\RaspberryPiProjects\WeatherStationHeadless\WeatherStationHeadless\obj\ARM\Release\ilc\intermediate\\"
+/ref:"D:\Jonathan Clow\RaspberryPiProjects\WeatherStationHeadless\WeatherStationHeadless\obj\ARM\Release\ilc\intermediate\PreMergeILTransformed\\"
+/ref:"D:\Jonathan Clow\RaspberryPiProjects\WeatherStationHeadless\WeatherStationHeadless\obj\ARM\Release\ilc\intermediate\TransformedSRWR\\"
+/ref:"D:\Jonathan Clow\RaspberryPiProjects\WeatherStationHeadless\WeatherStationHeadless\obj\ARM\Release\ilc\in\\"
+/ref:"D:\Jonathan Clow\RaspberryPiProjects\WeatherStationHeadless\WeatherStationHeadless\obj\ARM\Release\ilc\in\\"
+/ref:"D:\Jonathan Clow\RaspberryPiProjects\WeatherStationHeadless\WeatherStationHeadless\obj\ARM\Release\ilc\in\\"
+/ref:"C:\Program Files (x86)\MSBuild\Microsoft\.NetNative\ARM\ilc\lib\Private\\"
+/ref:"D:\Jonathan Clow\RaspberryPiProjects\WeatherStationHeadless\WeatherStationHeadless\obj\ARM\Release\ilc\in\WinMetadata\\"
+/ca:System.Private.CoreLib
+"@D:\Jonathan Clow\RaspberryPiProjects\WeatherStationHeadless\WeatherStationHeadless\obj\ARM\Release\ilc\intermediate\PreMergeILTransformed\ComputedSerializationInput.txt"
