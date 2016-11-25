@@ -61,7 +61,7 @@ namespace WeatherStationHeadless
 
             catch (Exception e)
             {
-                // Debug.WriteLine("Exception: " + e.Message + "\n" + e.StackTrace);
+                Debug.WriteLine("Exception: " + e.Message + "\n" + e.StackTrace);
                 throw;
             }
             

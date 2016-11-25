@@ -8,7 +8,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
     [System.Runtime.CompilerServices.__BlockReflection]
     public class XmlSerializationWriter1 : System.Xml.Serialization.XmlSerializationWriter {
 
-        public void Write5_WeatherData(object o, string parentRuntimeNs = null, string parentCompileTimeNs = null) {
+        public void Write4_WeatherData(object o, string parentRuntimeNs = null, string parentCompileTimeNs = null) {
             string defaultNamespace = parentRuntimeNs ?? @"";
             WriteStartDocument();
             if (o == null) {
@@ -17,10 +17,10 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             }
             TopLevelElement();
             string namespace1 = ( parentCompileTimeNs == @"" && parentRuntimeNs != null ) ? parentRuntimeNs : @"";
-            Write4_WeatherData(@"WeatherData", namespace1, ((global::WeatherStationHeadless.WeatherData)o), true, false, namespace1, @"");
+            Write3_WeatherData(@"WeatherData", namespace1, ((global::WeatherStationHeadless.WeatherData)o), true, false, namespace1, @"");
         }
 
-        void Write4_WeatherData(string n, string ns, global::WeatherStationHeadless.WeatherData o, bool isNullable, bool needType, string parentRuntimeNs = null, string parentCompileTimeNs = null) {
+        void Write3_WeatherData(string n, string ns, global::WeatherStationHeadless.WeatherData o, bool isNullable, bool needType, string parentRuntimeNs = null, string parentCompileTimeNs = null) {
             string defaultNamespace = parentRuntimeNs;
             if ((object)o == null) {
                 if (isNullable) WriteNullTagLiteral(n, ns);
@@ -47,7 +47,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             string namespace6 = ( parentCompileTimeNs == @"" && parentRuntimeNs != null ) ? parentRuntimeNs : @"";
             WriteElementStringRaw(@"Humidity", namespace6, System.Xml.XmlConvert.ToString((global::System.Single)((global::System.Single)o.@Humidity)));
             string namespace7 = ( parentCompileTimeNs == @"" && parentRuntimeNs != null ) ? parentRuntimeNs : @"";
-            Write3_DateTimeOffset(@"TimeStamp", namespace7, ((global::System.DateTimeOffset)o.@TimeStamp), false, namespace7, @"");
+            Write2_DateTimeOffset(@"TimeStamp", namespace7, ((global::System.DateTimeOffset)o.@TimeStamp), false, namespace7, @"");
             string namespace8 = ( parentCompileTimeNs == @"" && parentRuntimeNs != null ) ? parentRuntimeNs : @"";
             WriteElementStringRaw(@"LightSensorVoltage", namespace8, System.Xml.XmlConvert.ToString((global::System.Single)((global::System.Single)o.@LightSensorVoltage)));
             string namespace9 = ( parentCompileTimeNs == @"" && parentRuntimeNs != null ) ? parentRuntimeNs : @"";
@@ -61,7 +61,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             WriteEndElement(o);
         }
 
-        void Write3_DateTimeOffset(string n, string ns, global::System.DateTimeOffset o, bool needType, string parentRuntimeNs = null, string parentCompileTimeNs = null) {
+        void Write2_DateTimeOffset(string n, string ns, global::System.DateTimeOffset o, bool needType, string parentRuntimeNs = null, string parentCompileTimeNs = null) {
             string defaultNamespace = parentRuntimeNs;
             if (!needType) {
                 System.Type t = o.GetType();
@@ -83,12 +83,12 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
     [System.Runtime.CompilerServices.__BlockReflection]
     public class XmlSerializationReader1 : System.Xml.Serialization.XmlSerializationReader {
 
-        public object Read5_WeatherData(string defaultNamespace = null) {
+        public object Read4_WeatherData(string defaultNamespace = null) {
             object o = null;
             Reader.MoveToContent();
             if (Reader.NodeType == System.Xml.XmlNodeType.Element) {
                 if (((object) Reader.LocalName == (object)id1_WeatherData && string.Equals(Reader.NamespaceURI, defaultNamespace ?? id2_Item))) {
-                    o = Read4_WeatherData(true, true, defaultNamespace);
+                    o = Read3_WeatherData(true, true, defaultNamespace);
                 }
                 else {
                     throw CreateUnknownNodeException();
@@ -100,7 +100,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             return (object)o;
         }
 
-        global::WeatherStationHeadless.WeatherData Read4_WeatherData(bool isNullable, bool checkType, string defaultNamespace = null) {
+        global::WeatherStationHeadless.WeatherData Read3_WeatherData(bool isNullable, bool checkType, string defaultNamespace = null) {
             System.Xml.XmlQualifiedName xsiType = checkType ? GetXsiType() : null;
             bool isNull = false;
             if (isNullable) isNull = ReadNull();
@@ -161,7 +161,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
                         paramsRead[4] = true;
                     }
                     else if (!paramsRead[5] && ((object) Reader.LocalName == (object)id8_TimeStamp && string.Equals(Reader.NamespaceURI, defaultNamespace ?? id2_Item))) {
-                        o.@TimeStamp = Read3_DateTimeOffset(true, defaultNamespace);
+                        o.@TimeStamp = Read2_DateTimeOffset(true, defaultNamespace);
                         paramsRead[5] = true;
                     }
                     else if (!paramsRead[6] && ((object) Reader.LocalName == (object)id9_LightSensorVoltage && string.Equals(Reader.NamespaceURI, defaultNamespace ?? id2_Item))) {
@@ -208,7 +208,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             return o;
         }
 
-        global::System.DateTimeOffset Read3_DateTimeOffset(bool checkType, string defaultNamespace = null) {
+        global::System.DateTimeOffset Read2_DateTimeOffset(bool checkType, string defaultNamespace = null) {
             System.Xml.XmlQualifiedName xsiType = checkType ? GetXsiType() : null;
             bool isNull = false;
             if (checkType) {
@@ -310,11 +310,11 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
         }
 
         protected override void Serialize(object objectToSerialize, System.Xml.Serialization.XmlSerializationWriter writer) {
-            ((XmlSerializationWriter1)writer).Write5_WeatherData(objectToSerialize, this.DefaultNamespace, @"");
+            ((XmlSerializationWriter1)writer).Write4_WeatherData(objectToSerialize, this.DefaultNamespace, @"");
         }
 
         protected override object Deserialize(System.Xml.Serialization.XmlSerializationReader reader) {
-            return ((XmlSerializationReader1)reader).Read5_WeatherData(this.DefaultNamespace);
+            return ((XmlSerializationReader1)reader).Read4_WeatherData(this.DefaultNamespace);
         }
     }
 
@@ -327,7 +327,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             get {
                 if (readMethods == null) {
                     System.Collections.IDictionary _tmp = new System.Collections.Generic.Dictionary<string, string>();
-                    _tmp[@"WeatherStationHeadless.WeatherData::"] = @"Read5_WeatherData";
+                    _tmp[@"WeatherStationHeadless.WeatherData::"] = @"Read4_WeatherData";
                     if (readMethods == null) readMethods = _tmp;
                 }
                 return readMethods;
@@ -338,7 +338,7 @@ namespace Microsoft.Xml.Serialization.GeneratedAssembly {
             get {
                 if (writeMethods == null) {
                     System.Collections.IDictionary _tmp = new System.Collections.Generic.Dictionary<string, string>();
-                    _tmp[@"WeatherStationHeadless.WeatherData::"] = @"Write5_WeatherData";
+                    _tmp[@"WeatherStationHeadless.WeatherData::"] = @"Write4_WeatherData";
                     if (writeMethods == null) writeMethods = _tmp;
                 }
                 return writeMethods;

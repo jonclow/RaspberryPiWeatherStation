@@ -61,7 +61,6 @@ namespace McgInterop
 		// Signature, RhWaitForPendingFinalizers, [fwd] [return] [Mcg.CodeGen.VoidReturnMarshaller] void__void, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] int__int, 
 		[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
 		[global::System.Runtime.InteropServices.McgPInvokeMarshalStub("System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Runtime.RuntimeImports", "RhWaitForPendingFinalizers")]
-		[global::System.Runtime.CompilerServices.MethodImpl(global::System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
 		public static void RhWaitForPendingFinalizers(int allowReentrantWait)
 		{
 			// Marshalling
@@ -74,7 +73,6 @@ namespace McgInterop
 		// Signature, RhCompatibleReentrantWaitAny, [fwd] [return] [Mcg.CodeGen.BlittableValueMarshaller] int__int, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] int__int, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] int__int, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] int__int, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] System_IntPtr___ptr__w64 int *, 
 		[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
 		[global::System.Runtime.InteropServices.McgPInvokeMarshalStub("System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Runtime.RuntimeImports", "RhCompatibleReentrantWaitAny")]
-		[global::System.Runtime.CompilerServices.MethodImpl(global::System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
 		public static int RhCompatibleReentrantWaitAny(
 					int alertable, 
 					int timeout, 
@@ -99,7 +97,6 @@ namespace McgInterop
 		// Signature, _ecvt_s, [fwd] [return] [Mcg.CodeGen.VoidReturnMarshaller] void__void, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] byte___ptrunsigned char *, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] int__int, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] double__double, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] int__int, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] int___ptrint *, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] int___ptrint *, 
 		[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
 		[global::System.Runtime.InteropServices.McgPInvokeMarshalStub("System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Runtime.RuntimeImports", "_ecvt_s")]
-		[global::System.Runtime.CompilerServices.MethodImpl(global::System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
 		public static void _ecvt_s(
 					byte* buffer, 
 					int sizeInBytes, 
@@ -125,7 +122,6 @@ namespace McgInterop
 		// Signature, memmove, [fwd] [return] [Mcg.CodeGen.VoidReturnMarshaller] void__void, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] byte___ptrunsigned char *, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] byte___ptrunsigned char *, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] uint__unsigned int, 
 		[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
 		[global::System.Runtime.InteropServices.McgPInvokeMarshalStub("System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Runtime.RuntimeImports", "memmove")]
-		[global::System.Runtime.CompilerServices.MethodImpl(global::System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
 		public static void memmove(
 					byte* dmem, 
 					byte* smem, 
@@ -151,7 +147,6 @@ namespace McgInterop
 		// Signature, CallingConventionConverter_GetStubs, [fwd] [return] [Mcg.CodeGen.VoidReturnMarshaller] void__void, [fwd] [out] [managedbyref] [nativebyref] [Mcg.CodeGen.BlittableValueMarshaller] System_IntPtr____w64 int, [fwd] [out] [managedbyref] [nativebyref] [Mcg.CodeGen.BlittableValueMarshaller] System_IntPtr____w64 int, [fwd] [out] [managedbyref] [nativebyref] [Mcg.CodeGen.BlittableValueMarshaller] System_IntPtr____w64 int, 
 		[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
 		[global::System.Runtime.InteropServices.McgPInvokeMarshalStub("System.Private.TypeLoader, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "Internal.Runtime.TypeLoader.CallConverterThunk", "CallingConventionConverter_GetStubs")]
-		[global::System.Runtime.CompilerServices.MethodImpl(global::System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
 		public static void CallingConventionConverter_GetStubs(
 					out global::System.IntPtr returnVoidStub, 
 					out global::System.IntPtr returnIntegerStub, 
@@ -178,7 +173,6 @@ namespace McgInterop
 		// Signature, CallingConventionConverter_SpecifyCommonStubData, [fwd] [return] [Mcg.CodeGen.VoidReturnMarshaller] void__void, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] System_IntPtr____w64 int, 
 		[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
 		[global::System.Runtime.InteropServices.McgPInvokeMarshalStub("System.Private.TypeLoader, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "Internal.Runtime.TypeLoader.CallConverterThunk", "CallingConventionConverter_SpecifyCommonStubData")]
-		[global::System.Runtime.CompilerServices.MethodImpl(global::System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
 		public static void CallingConventionConverter_SpecifyCommonStubData(global::System.IntPtr commonStubData)
 		{
 			// Marshalling
@@ -197,7 +191,6 @@ namespace McgInterop
 		// Signature, GetLastError, [fwd] [return] [Mcg.CodeGen.BlittableValueMarshaller] int__int, 
 		[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
 		[global::System.Runtime.InteropServices.McgPInvokeMarshalStub("System.Runtime.Extensions, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "Interop+mincore", "GetLastError")]
-		[global::System.Runtime.CompilerServices.MethodImpl(global::System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
 		public static int GetLastError()
 		{
 			// Setup
@@ -219,7 +212,6 @@ namespace McgInterop
 		// Signature, RoInitialize, [fwd] [return] [Mcg.CodeGen.BlittableValueMarshaller] int__int, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] uint__unsigned int, 
 		[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
 		[global::System.Runtime.InteropServices.McgPInvokeMarshalStub("System.Private.WinRTInterop.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089", "mincore+mincore_PInvokes", "RoInitialize")]
-		[global::System.Runtime.CompilerServices.MethodImpl(global::System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
 		public static int RoInitialize(uint initType)
 		{
 			// Setup
@@ -241,7 +233,6 @@ namespace McgInterop
 		// Signature, IsValidLocaleName, [fwd] [return] [Mcg.CodeGen.BlittableValueMarshaller] int__int, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] char___ptrwchar_t *, 
 		[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
 		[global::System.Runtime.InteropServices.McgPInvokeMarshalStub("System.Private.WinRTInterop.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089", "mincore+mincore_PInvokes", "IsValidLocaleName")]
-		[global::System.Runtime.CompilerServices.MethodImpl(global::System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
 		public static int IsValidLocaleName(char* lpLocaleName)
 		{
 			// Setup
@@ -257,7 +248,6 @@ namespace McgInterop
 		// Signature, ResolveLocaleName, [fwd] [return] [Mcg.CodeGen.BlittableValueMarshaller] int__int, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] char___ptrwchar_t *, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] char___ptrwchar_t *, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] int__int, 
 		[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
 		[global::System.Runtime.InteropServices.McgPInvokeMarshalStub("System.Private.WinRTInterop.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089", "mincore+mincore_PInvokes", "ResolveLocaleName")]
-		[global::System.Runtime.CompilerServices.MethodImpl(global::System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
 		public static int ResolveLocaleName(
 					char* lpNameToResolve, 
 					char* lpLocaleName, 
@@ -280,7 +270,6 @@ namespace McgInterop
 		// Signature, GetCPInfoExW, [fwd] [return] [Mcg.CodeGen.BlittableValueMarshaller] int__int, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] uint__unsigned int, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] uint__unsigned int, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] Interop_mincore_CPINFOEXW__System_Text_Encoding_CodePages___ptr__Interop_mincore_CPINFOEXW__System_Text_Encoding_CodePages *, 
 		[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
 		[global::System.Runtime.InteropServices.McgPInvokeMarshalStub("System.Text.Encoding.CodePages, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "Interop+mincore", "GetCPInfoExW")]
-		[global::System.Runtime.CompilerServices.MethodImpl(global::System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
 		public static int GetCPInfoExW(
 					uint CodePage, 
 					uint dwFlags, 
@@ -309,7 +298,6 @@ namespace McgInterop
 		// Signature, CoCreateInstance, [fwd] [return] [Mcg.CodeGen.BlittableValueMarshaller] int__int, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] byte___ptrunsigned char *, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] System_IntPtr____w64 int, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] int__int, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] byte___ptrunsigned char *, [fwd] [out] [managedbyref] [nativebyref] [Mcg.CodeGen.BlittableValueMarshaller] System_IntPtr____w64 int, 
 		[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
 		[global::System.Runtime.InteropServices.McgPInvokeMarshalStub("System.Private.StackTraceGenerator, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "Internal.StackTraceGenerator.StackTraceGenerator", "CoCreateInstance")]
-		[global::System.Runtime.CompilerServices.MethodImpl(global::System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
 		public static int CoCreateInstance(
 					byte* rclsid, 
 					global::System.IntPtr pUnkOuter, 
@@ -344,7 +332,6 @@ namespace McgInterop
 		// Signature, SysFreeString, [fwd] [return] [Mcg.CodeGen.VoidReturnMarshaller] void__void, [fwd] [in] [Mcg.CodeGen.BlittableValueMarshaller] System_IntPtr____w64 int, 
 		[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
 		[global::System.Runtime.InteropServices.McgPInvokeMarshalStub("System.Private.StackTraceGenerator, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "Internal.LightweightInterop.MarshalExtensions", "SysFreeString")]
-		[global::System.Runtime.CompilerServices.MethodImpl(global::System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
 		public static void SysFreeString(global::System.IntPtr bstr)
 		{
 			// Marshalling
@@ -363,7 +350,6 @@ namespace McgInterop
 		// Signature, RoGetBufferMarshaler, [fwd] [return] [Mcg.CodeGen.BlittableValueMarshaller] int__int, [fwd] [out] [managedbyref] [nativebyref] [Mcg.CodeGen.ComInterfaceMarshaller] System_Runtime_InteropServices_IMarshal__System_Runtime_WindowsRuntime__System_Runtime_InteropServices__IMarshal__System_Runtime_WindowsRuntime *, 
 		[global::System.Runtime.InteropServices.McgGeneratedMarshallingCode]
 		[global::System.Runtime.InteropServices.McgPInvokeMarshalStub("System.Runtime.WindowsRuntime, Version=4.0.10.0, Culture=neutral, PublicKeyToken=b77a5c561934e089", "Interop+mincore_PInvokes", "RoGetBufferMarshaler")]
-		[global::System.Runtime.CompilerServices.MethodImpl(global::System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
 		public static int RoGetBufferMarshaler(out global::System.Runtime.InteropServices.IMarshal__System_Runtime_WindowsRuntime bufferMarshalerPtr)
 		{
 			// Setup

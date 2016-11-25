@@ -654,11 +654,146 @@ namespace McgInterop
 		internal static int StdCall__int__(
 					global::System.IntPtr pfn, 
 					void* pthis, 
+					int arg0, 
+					void* arg1)
+		{
+			// This method is implemented elsewhere in the toolchain
+			return 0;
+		}
+
+		internal static int StdCall__int__(
+					global::System.IntPtr pfn, 
+					void* pthis, 
+					ulong arg0)
+		{
+			// This method is implemented elsewhere in the toolchain
+			return 0;
+		}
+
+		internal static int StdCall__int__(
+					global::System.IntPtr pfn, 
+					void* pthis, 
+					ulong arg0, 
+					void* arg1)
+		{
+			// This method is implemented elsewhere in the toolchain
+			return 0;
+		}
+
+		internal static ulong HasThisCall__Func_ulong__(
+					object __this, 
+					global::System.IntPtr pfn)
+		{
+			// This method is implemented elsewhere in the toolchain
+			return 0;
+		}
+
+		internal static void HasThisCall__Proc_ulong__(
+					object __this, 
+					global::System.IntPtr pfn, 
+					ulong arg0)
+		{
+			// This method is implemented elsewhere in the toolchain
+		}
+
+		internal static TResult HasThisCall__Func_ulong__TResult__<TResult>(
+					object __this, 
+					global::System.IntPtr pfn, 
+					ulong arg0)
+		{
+			// This method is implemented elsewhere in the toolchain
+			return default(TResult);
+		}
+
+		internal static TResult HasThisCall__Func_TResult__<TResult>(
+					object __this, 
+					global::System.IntPtr pfn)
+		{
+			// This method is implemented elsewhere in the toolchain
+			return default(TResult);
+		}
+
+		internal static bool HasThisCall__Func_bool__(
+					object __this, 
+					global::System.IntPtr pfn)
+		{
+			// This method is implemented elsewhere in the toolchain
+			return default(bool);
+		}
+
+		internal static int StdCall__int__(
+					global::System.IntPtr pfn, 
+					void* pthis, 
+					void* arg0, 
+					uint arg1, 
+					global::Windows.Storage.Streams.InputStreamOptions arg2, 
+					void* arg3)
+		{
+			// This method is implemented elsewhere in the toolchain
+			return 0;
+		}
+
+		internal static int StdCall__int__(
+					global::System.IntPtr pfn, 
+					void* pthis, 
+					uint arg0)
+		{
+			// This method is implemented elsewhere in the toolchain
+			return 0;
+		}
+
+		internal static uint HasThisCall__Func_uint__(
+					object __this, 
+					global::System.IntPtr pfn)
+		{
+			// This method is implemented elsewhere in the toolchain
+			return 0;
+		}
+
+		internal static void HasThisCall__Proc_uint__(
+					object __this, 
+					global::System.IntPtr pfn, 
+					uint arg0)
+		{
+			// This method is implemented elsewhere in the toolchain
+		}
+
+		internal static int StdCall__int__(
+					global::System.IntPtr pfn, 
+					void* pthis, 
+					void* arg0, 
+					uint arg1)
+		{
+			// This method is implemented elsewhere in the toolchain
+			return 0;
+		}
+
+		internal static void HasThisCall__Proc_TArg0__uint__<TArg0>(
+					object __this, 
+					global::System.IntPtr pfn, 
+					TArg0 arg0, 
+					uint arg1)
+		{
+			// This method is implemented elsewhere in the toolchain
+		}
+
+		internal static int StdCall__int__(
+					global::System.IntPtr pfn, 
+					void* pthis, 
 					void* arg0, 
 					int arg1)
 		{
 			// This method is implemented elsewhere in the toolchain
 			return 0;
+		}
+
+		internal static void HasThisCall__Proc_TArg0___AsyncStatus__<TArg0>(
+					object __this, 
+					global::System.IntPtr pfn, 
+					TArg0 arg0, 
+					global::Windows.Foundation.AsyncStatus arg1)
+		{
+			// This method is implemented elsewhere in the toolchain
 		}
 
 		internal static int StdCall__int__(
@@ -717,22 +852,6 @@ namespace McgInterop
 			// This method is implemented elsewhere in the toolchain
 		}
 
-		internal static TResult HasThisCall__Func_TResult__<TResult>(
-					object __this, 
-					global::System.IntPtr pfn)
-		{
-			// This method is implemented elsewhere in the toolchain
-			return default(TResult);
-		}
-
-		internal static bool HasThisCall__Func_bool__(
-					object __this, 
-					global::System.IntPtr pfn)
-		{
-			// This method is implemented elsewhere in the toolchain
-			return default(bool);
-		}
-
 		internal static int StdCall__int__(
 					global::System.IntPtr pfn, 
 					void* pthis, 
@@ -770,15 +889,6 @@ namespace McgInterop
 					void* pthis, 
 					uint arg0, 
 					global::System.Type__Impl.UnsafeType arg1)
-		{
-			// This method is implemented elsewhere in the toolchain
-			return 0;
-		}
-
-		internal static int StdCall__int__(
-					global::System.IntPtr pfn, 
-					void* pthis, 
-					uint arg0)
 		{
 			// This method is implemented elsewhere in the toolchain
 			return 0;
@@ -828,16 +938,6 @@ namespace McgInterop
 					global::System.IntPtr pfn, 
 					void* pthis, 
 					global::System.Runtime.InteropServices.HSTRING arg0)
-		{
-			// This method is implemented elsewhere in the toolchain
-			return 0;
-		}
-
-		internal static int StdCall__int__(
-					global::System.IntPtr pfn, 
-					void* pthis, 
-					int arg0, 
-					void* arg1)
 		{
 			// This method is implemented elsewhere in the toolchain
 			return 0;
@@ -897,7 +997,9 @@ namespace McgInterop
 		internal static int StdCall__int__(
 					global::System.IntPtr pfn, 
 					void* pthis, 
-					sbyte arg0)
+					void* arg0, 
+					void* arg1, 
+					void* arg2)
 		{
 			// This method is implemented elsewhere in the toolchain
 			return 0;
@@ -906,9 +1008,7 @@ namespace McgInterop
 		internal static int StdCall__int__(
 					global::System.IntPtr pfn, 
 					void* pthis, 
-					void* arg0, 
-					void* arg1, 
-					void* arg2)
+					sbyte arg0)
 		{
 			// This method is implemented elsewhere in the toolchain
 			return 0;
@@ -923,62 +1023,6 @@ namespace McgInterop
 		{
 			// This method is implemented elsewhere in the toolchain
 			return 0;
-		}
-
-		internal static int StdCall__int__(
-					global::System.IntPtr pfn, 
-					void* pthis, 
-					void* arg0, 
-					uint arg1, 
-					global::Windows.Storage.Streams.InputStreamOptions arg2, 
-					void* arg3)
-		{
-			// This method is implemented elsewhere in the toolchain
-			return 0;
-		}
-
-		internal static uint HasThisCall__Func_uint__(
-					object __this, 
-					global::System.IntPtr pfn)
-		{
-			// This method is implemented elsewhere in the toolchain
-			return 0;
-		}
-
-		internal static void HasThisCall__Proc_uint__(
-					object __this, 
-					global::System.IntPtr pfn, 
-					uint arg0)
-		{
-			// This method is implemented elsewhere in the toolchain
-		}
-
-		internal static int StdCall__int__(
-					global::System.IntPtr pfn, 
-					void* pthis, 
-					void* arg0, 
-					uint arg1)
-		{
-			// This method is implemented elsewhere in the toolchain
-			return 0;
-		}
-
-		internal static void HasThisCall__Proc_TArg0__uint__<TArg0>(
-					object __this, 
-					global::System.IntPtr pfn, 
-					TArg0 arg0, 
-					uint arg1)
-		{
-			// This method is implemented elsewhere in the toolchain
-		}
-
-		internal static void HasThisCall__Proc_TArg0___AsyncStatus__<TArg0>(
-					object __this, 
-					global::System.IntPtr pfn, 
-					TArg0 arg0, 
-					global::Windows.Foundation.AsyncStatus arg1)
-		{
-			// This method is implemented elsewhere in the toolchain
 		}
 
 		internal static int StdCall__int__(
@@ -1016,45 +1060,12 @@ namespace McgInterop
 		internal static int StdCall__int__(
 					global::System.IntPtr pfn, 
 					void* pthis, 
-					ulong arg0)
+					global::System.Runtime.InteropServices.HSTRING arg0, 
+					int arg1, 
+					void* arg2)
 		{
 			// This method is implemented elsewhere in the toolchain
 			return 0;
-		}
-
-		internal static int StdCall__int__(
-					global::System.IntPtr pfn, 
-					void* pthis, 
-					ulong arg0, 
-					void* arg1)
-		{
-			// This method is implemented elsewhere in the toolchain
-			return 0;
-		}
-
-		internal static ulong HasThisCall__Func_ulong__(
-					object __this, 
-					global::System.IntPtr pfn)
-		{
-			// This method is implemented elsewhere in the toolchain
-			return 0;
-		}
-
-		internal static void HasThisCall__Proc_ulong__(
-					object __this, 
-					global::System.IntPtr pfn, 
-					ulong arg0)
-		{
-			// This method is implemented elsewhere in the toolchain
-		}
-
-		internal static TResult HasThisCall__Func_ulong__TResult__<TResult>(
-					object __this, 
-					global::System.IntPtr pfn, 
-					ulong arg0)
-		{
-			// This method is implemented elsewhere in the toolchain
-			return default(TResult);
 		}
 
 		internal static int StdCall__int__(
@@ -1313,584 +1324,579 @@ namespace McgInterop
 
 		public delegate int AddrOfTarget6(
 					global::System.IntPtr a0, 
-					global::Windows.ApplicationModel.Background.IBackgroundTaskInstance__Impl.Vtbl** a1);
+					global::Windows.Storage.IStorageFile__Impl.Vtbl** a1);
 
-		public delegate void AddrOfTarget7(
-					global::System.__ComObject a0, 
-					global::Windows.ApplicationModel.Background.IBackgroundTaskInstance a1, 
-					global::Windows.ApplicationModel.Background.BackgroundTaskCancellationReason a2);
+		public delegate int AddrOfTarget7(
+					global::System.IntPtr a0, 
+					ulong* a1);
 
 		public delegate int AddrOfTarget8(
 					global::System.IntPtr a0, 
-					global::Windows.ApplicationModel.Background.IBackgroundTaskInstance__Impl.Vtbl** a1, 
-					global::Windows.ApplicationModel.Background.BackgroundTaskCancellationReason a2);
+					ulong a1);
 
 		public delegate int AddrOfTarget9(
 					global::System.IntPtr a0, 
-					float* a1);
+					ulong a1, 
+					global::Windows.Storage.Streams.IInputStream__Impl.Vtbl*** a2);
 
 		public delegate int AddrOfTarget10(
 					global::System.IntPtr a0, 
-					double* a1);
+					ulong a1, 
+					global::Windows.Storage.Streams.IOutputStream__Impl.Vtbl*** a2);
 
 		public delegate int AddrOfTarget11(
 					global::System.IntPtr a0, 
-					global::System.DateTimeOffset__Impl.UnsafeType* a1);
+					global::Windows.Storage.Streams.IRandomAccessStream__Impl.Vtbl*** a1);
 
 		public delegate int AddrOfTarget12(
 					global::System.IntPtr a0, 
-					int* a1);
-
-		public delegate int AddrOfTarget13(
-					global::System.IntPtr a0, 
-					float a1, 
-					float a2, 
-					float a3, 
-					float* a4);
-
-		public delegate int AddrOfTarget14(
-					global::System.IntPtr a0, 
-					int a1, 
-					int* a2);
-
-		public delegate int AddrOfTarget15(
-					global::System.IntPtr a0, 
-					float a1);
-
-		public delegate int AddrOfTarget16(
-					global::System.IntPtr a0, 
-					double a1);
-
-		public delegate int AddrOfTarget17(
-					global::System.IntPtr a0, 
-					global::System.DateTimeOffset__Impl.UnsafeType a1);
-
-		public delegate int AddrOfTarget18(
-					global::System.IntPtr a0, 
-					int a1);
-
-		public delegate int AddrOfTarget19(
-					global::System.IntPtr a0, 
-					global::Windows.Devices.Gpio.IGpioPin__Impl.Vtbl*** a1);
-
-		public delegate int AddrOfTarget20(
-					global::System.IntPtr a0, 
 					sbyte* a1);
 
-		public delegate int AddrOfTarget21(
-					global::System.IntPtr a0, 
-					sbyte a1);
-
-		public delegate int AddrOfTarget22(
-					global::System.IntPtr a0, 
-					global::Windows.Devices.Gpio.IGpioPin__Impl.Vtbl** a1);
-
-		public delegate void AddrOfTarget23(
-					global::System.__ComObject a0, 
-					global::Windows.System.Threading.ThreadPoolTimer a1);
-
-		public delegate int AddrOfTarget24(
-					global::System.IntPtr a0, 
-					global::Windows.System.Threading.IThreadPoolTimer__Impl.Vtbl** a1);
-
-		public delegate int AddrOfTarget25(
-					global::System.IntPtr a0, 
-					uint a1, 
-					global::System.Type__Impl.UnsafeType* a2);
-
-		public delegate int AddrOfTarget26(
-					global::System.IntPtr a0, 
-					uint* a1);
-
-		public delegate int AddrOfTarget27(
-					global::System.IntPtr a0, 
-					global::System.Collections.Generic.IReadOnlyList_A_System_Type_V___Impl.Vtbl*** a1);
-
-		public delegate int AddrOfTarget28(
-					global::System.IntPtr a0, 
-					global::System.Type__Impl.UnsafeType a1, 
-					uint* a2, 
-					sbyte* a3);
-
-		public delegate int AddrOfTarget29(
-					global::System.IntPtr a0, 
-					uint a1, 
-					global::System.Type__Impl.UnsafeType a2);
-
-		public delegate int AddrOfTarget30(
-					global::System.IntPtr a0, 
-					uint a1);
-
-		public delegate int AddrOfTarget31(
-					global::System.IntPtr a0, 
-					global::System.Type__Impl.UnsafeType a1);
-
-		public delegate int AddrOfTarget32(global::System.IntPtr a0);
-
-		public delegate int AddrOfTarget33(
-					global::System.IntPtr a0, 
-					uint a1, 
-					uint a2, 
-					global::System.Type__Impl.UnsafeType* a3, 
-					uint* a4);
-
-		public delegate int AddrOfTarget34(
-					global::System.IntPtr a0, 
-					uint a1, 
-					global::System.DateTimeOffset__Impl.UnsafeType* a2, 
-					uint* a3);
-
-		public delegate int AddrOfTarget35(
-					global::System.IntPtr a0, 
-					uint a1, 
-					global::System.DateTimeOffset__Impl.UnsafeType* a2);
-
-		public delegate int AddrOfTarget36(
-					global::System.IntPtr a0, 
-					global::System.Collections.Generic.IReadOnlyList_A_System_DateTimeOffset_V___Impl.Vtbl*** a1);
-
-		public delegate int AddrOfTarget37(
-					global::System.IntPtr a0, 
-					global::System.DateTimeOffset__Impl.UnsafeType a1, 
-					uint* a2, 
-					sbyte* a3);
-
-		public delegate int AddrOfTarget38(
-					global::System.IntPtr a0, 
-					uint a1, 
-					global::System.DateTimeOffset__Impl.UnsafeType a2);
-
-		public delegate int AddrOfTarget39(
-					global::System.IntPtr a0, 
-					uint a1, 
-					uint a2, 
-					global::System.DateTimeOffset__Impl.UnsafeType* a3, 
-					uint* a4);
-
-		public delegate int AddrOfTarget40(
-					global::System.IntPtr a0, 
-					global::System.TimeSpan* a1);
-
-		public delegate int AddrOfTarget41(
-					global::System.IntPtr a0, 
-					uint a1, 
-					global::System.TimeSpan* a2, 
-					uint* a3);
-
-		public delegate int AddrOfTarget42(
-					global::System.IntPtr a0, 
-					uint a1, 
-					global::System.TimeSpan* a2);
-
-		public delegate int AddrOfTarget43(
-					global::System.IntPtr a0, 
-					global::System.Collections.Generic.IReadOnlyList_A_System_TimeSpan_V___Impl.Vtbl*** a1);
-
-		public delegate int AddrOfTarget44(
-					global::System.IntPtr a0, 
-					global::System.TimeSpan a1, 
-					uint* a2, 
-					sbyte* a3);
-
-		public delegate int AddrOfTarget45(
-					global::System.IntPtr a0, 
-					uint a1, 
-					global::System.TimeSpan a2);
-
-		public delegate int AddrOfTarget46(
-					global::System.IntPtr a0, 
-					global::System.TimeSpan a1);
-
-		public delegate int AddrOfTarget47(
-					global::System.IntPtr a0, 
-					uint a1, 
-					uint a2, 
-					global::System.TimeSpan* a3, 
-					uint* a4);
-
-		public delegate int AddrOfTarget48(
-					global::System.IntPtr a0, 
-					global::System.Runtime.InteropServices.HSTRING a1, 
-					global::System.Runtime.InteropServices.__vtable_IInspectable** a2);
-
-		public delegate int AddrOfTarget49(
-					global::System.IntPtr a0, 
-					global::System.Runtime.InteropServices.HSTRING a1, 
-					sbyte* a2);
-
-		public delegate int AddrOfTarget50(
-					global::System.IntPtr a0, 
-					global::System.Collections.Generic.IReadOnlyDictionary_A_string_j_System_Object_V___Impl.Vtbl*** a1);
-
-		public delegate int AddrOfTarget51(
-					global::System.IntPtr a0, 
-					global::System.Runtime.InteropServices.HSTRING a1, 
-					global::System.Runtime.InteropServices.__vtable_IInspectable* a2, 
-					sbyte* a3);
-
-		public delegate int AddrOfTarget52(
-					global::System.IntPtr a0, 
-					global::System.Runtime.InteropServices.HSTRING a1);
-
-		public delegate int AddrOfTarget53(
-					global::System.IntPtr a0, 
-					global::System.Collections.Generic.KeyValuePair_A_string_j_System_Object_V___Impl.Vtbl*** a1);
-
-		public delegate int AddrOfTarget54(
-					global::System.IntPtr a0, 
-					uint a1, 
-					global::System.Collections.Generic.KeyValuePair_A_string_j_System_Object_V___Impl.Vtbl*** a2, 
-					uint* a3);
-
-		public delegate int AddrOfTarget55(
-					global::System.IntPtr a0, 
-					global::System.Collections.Generic.IReadOnlyDictionary_A_string_j_System_Object_V___Impl.Vtbl*** a1, 
-					global::System.Collections.Generic.IReadOnlyDictionary_A_string_j_System_Object_V___Impl.Vtbl*** a2);
-
-		public delegate int AddrOfTarget56(
-					global::System.IntPtr a0, 
-					global::System.Runtime.InteropServices.__vtable_IInspectable* a1, 
-					global::System.Runtime.InteropServices.__vtable_IInspectable** a2);
-
-		public delegate int AddrOfTarget57(
-					global::System.IntPtr a0, 
-					global::System.Runtime.InteropServices.__vtable_IInspectable* a1, 
-					sbyte* a2);
-
-		public delegate int AddrOfTarget58(
-					global::System.IntPtr a0, 
-					global::System.Collections.Generic.IReadOnlyDictionary_A_System_Object_j_System_Object_V___Impl.Vtbl*** a1);
-
-		public delegate int AddrOfTarget59(
-					global::System.IntPtr a0, 
-					global::System.Runtime.InteropServices.__vtable_IInspectable* a1, 
-					global::System.Runtime.InteropServices.__vtable_IInspectable* a2, 
-					sbyte* a3);
-
-		public delegate int AddrOfTarget60(
-					global::System.IntPtr a0, 
-					global::System.Runtime.InteropServices.__vtable_IInspectable* a1);
-
-		public delegate int AddrOfTarget61(
-					global::System.IntPtr a0, 
-					global::System.Runtime.InteropServices.__vtable_IInspectable** a1);
-
-		public delegate int AddrOfTarget62(
-					global::System.IntPtr a0, 
-					global::System.Collections.Generic.KeyValuePair_A_System_Object_j_System_Object_V___Impl.Vtbl*** a1);
-
-		public delegate int AddrOfTarget63(
-					global::System.IntPtr a0, 
-					uint a1, 
-					global::System.Collections.Generic.KeyValuePair_A_System_Object_j_System_Object_V___Impl.Vtbl*** a2, 
-					uint* a3);
-
-		public delegate int AddrOfTarget64(
-					global::System.IntPtr a0, 
-					global::System.Collections.Generic.IReadOnlyDictionary_A_System_Object_j_System_Object_V___Impl.Vtbl*** a1, 
-					global::System.Collections.Generic.IReadOnlyDictionary_A_System_Object_j_System_Object_V___Impl.Vtbl*** a2);
-
-		public delegate int AddrOfTarget65(
-					global::System.IntPtr a0, 
-					global::Windows.Foundation.Collections.IObservableMap_A_string_j_string_V___Impl.Vtbl** a1, 
-					global::Windows.Foundation.Collections.IMapChangedEventArgs_A_string_V___Impl.Vtbl** a2);
-
-		public delegate void AddrOfTarget66(
-					global::System.__ComObject a0, 
-					global::Windows.Foundation.Collections.IObservableMap<string, string> a1, 
-					global::Windows.Foundation.Collections.IMapChangedEventArgs<string> a2);
-
-		public delegate int AddrOfTarget67(
-					global::System.IntPtr a0, 
-					global::Windows.Foundation.IAsyncAction__Impl.Vtbl** a1);
-
-		public delegate void AddrOfTarget68(global::System.__ComObject a0);
-
-		public delegate void AddrOfTarget69(
-					global::System.__ComObject a0, 
-					global::Windows.Foundation.IAsyncOperation<global::Windows.Storage.IStorageItem> a1, 
-					global::Windows.Foundation.AsyncStatus a2);
-
-		public delegate int AddrOfTarget70(
-					global::System.IntPtr a0, 
-					global::System.Runtime.InteropServices.__vtable_IInspectable* a1, 
-					global::Windows.Foundation.Diagnostics.ITracingStatusChangedEventArgs__Impl.Vtbl** a2);
-
-		public delegate void AddrOfTarget71(
-					global::System.__ComObject a0, 
-					global::Windows.Foundation.IAsyncOperation<global::Windows.Devices.Enumeration.DeviceInformationCollection> a1, 
-					global::Windows.Foundation.AsyncStatus a2);
-
-		public delegate void AddrOfTarget72(
-					global::System.__ComObject a0, 
-					global::Windows.Foundation.IAsyncOperation<global::Windows.Devices.Spi.SpiDevice> a1, 
-					global::Windows.Foundation.AsyncStatus a2);
-
-		public delegate void AddrOfTarget73(
-					global::System.__ComObject a0, 
-					global::Windows.Foundation.IAsyncOperation<global::Windows.Devices.I2c.I2cDevice> a1, 
-					global::Windows.Foundation.AsyncStatus a2);
-
-		public delegate int AddrOfTarget74(
+		public delegate int AddrOfTarget13(
 					global::System.IntPtr a0, 
 					global::Windows.Storage.Streams.IBuffer__Impl.Vtbl** a1, 
 					uint a2, 
 					global::Windows.Storage.Streams.InputStreamOptions a3, 
 					global::Windows.Foundation.IAsyncOperationWithProgress_A_Windows_Storage_Streams_IBuffer_j_uint_V___Impl.Vtbl*** a4);
 
-		public delegate void AddrOfTarget75(
+		public delegate int AddrOfTarget14(
+					global::System.IntPtr a0, 
+					uint* a1);
+
+		public delegate int AddrOfTarget15(
+					global::System.IntPtr a0, 
+					uint a1);
+
+		public delegate void AddrOfTarget16(
 					global::System.__ComObject a0, 
 					global::Windows.Foundation.IAsyncOperationWithProgress<global::Windows.Storage.Streams.IBuffer, uint> a1, 
 					uint a2);
 
-		public delegate void AddrOfTarget76(
+		public delegate void AddrOfTarget17(
 					global::System.__ComObject a0, 
 					global::Windows.Foundation.IAsyncOperationWithProgress<global::Windows.Storage.Streams.IBuffer, uint> a1, 
 					global::Windows.Foundation.AsyncStatus a2);
 
-		public delegate int AddrOfTarget77(
+		public delegate int AddrOfTarget18(
 					global::System.IntPtr a0, 
 					global::Windows.Foundation.AsyncOperationProgressHandler_A_Windows_Storage_Streams_IBuffer_j_uint_V___Impl.Vtbl** a1);
 
-		public delegate int AddrOfTarget78(
+		public delegate int AddrOfTarget19(
 					global::System.IntPtr a0, 
 					global::Windows.Foundation.AsyncOperationProgressHandler_A_Windows_Storage_Streams_IBuffer_j_uint_V___Impl.Vtbl*** a1);
 
-		public delegate int AddrOfTarget79(
+		public delegate int AddrOfTarget20(
 					global::System.IntPtr a0, 
 					global::Windows.Foundation.AsyncOperationWithProgressCompletedHandler_A_Windows_Storage_Streams_IBuffer_j_uint_V___Impl.Vtbl** a1);
 
-		public delegate int AddrOfTarget80(
+		public delegate int AddrOfTarget21(
 					global::System.IntPtr a0, 
 					global::Windows.Foundation.AsyncOperationWithProgressCompletedHandler_A_Windows_Storage_Streams_IBuffer_j_uint_V___Impl.Vtbl*** a1);
 
-		public delegate int AddrOfTarget81(
+		public delegate int AddrOfTarget22(
 					global::System.IntPtr a0, 
 					global::Windows.Storage.Streams.IBuffer__Impl.Vtbl*** a1);
 
-		public delegate int AddrOfTarget82(
+		public delegate int AddrOfTarget23(
 					global::System.IntPtr a0, 
 					global::Windows.Foundation.IAsyncOperationWithProgress_A_Windows_Storage_Streams_IBuffer_j_uint_V___Impl.Vtbl** a1, 
 					uint a2);
 
-		public delegate int AddrOfTarget83(
+		public delegate int AddrOfTarget24(
 					global::System.IntPtr a0, 
 					global::Windows.Foundation.IAsyncOperationWithProgress_A_Windows_Storage_Streams_IBuffer_j_uint_V___Impl.Vtbl** a1, 
 					global::Windows.Foundation.AsyncStatus a2);
 
-		public delegate void AddrOfTarget84(
-					global::System.__ComObject a0, 
-					global::Windows.Foundation.IAsyncOperationWithProgress<global::Windows.Storage.Streams.IInputStream, ulong> a1, 
-					ulong a2);
-
-		public delegate void AddrOfTarget85(
-					global::System.__ComObject a0, 
-					global::Windows.Foundation.IAsyncOperationWithProgress<global::Windows.Storage.Streams.IInputStream, ulong> a1, 
-					global::Windows.Foundation.AsyncStatus a2);
-
-		public delegate int AddrOfTarget86(
-					global::System.IntPtr a0, 
-					global::Windows.Foundation.IAsyncOperationWithProgress_A_Windows_Storage_Streams_IInputStream_j_ulong_V___Impl.Vtbl** a1, 
-					ulong a2);
-
-		public delegate int AddrOfTarget87(
-					global::System.IntPtr a0, 
-					global::Windows.Foundation.IAsyncOperationWithProgress_A_Windows_Storage_Streams_IInputStream_j_ulong_V___Impl.Vtbl** a1, 
-					global::Windows.Foundation.AsyncStatus a2);
-
-		public delegate void AddrOfTarget88(
-					global::System.__ComObject a0, 
-					global::Windows.Foundation.IAsyncOperationWithProgress<global::Windows.Web.Http.HttpResponseMessage, global::Windows.Web.Http.HttpProgress> a1, 
-					global::Windows.Web.Http.HttpProgress a2);
-
-		public delegate void AddrOfTarget89(
-					global::System.__ComObject a0, 
-					global::Windows.Foundation.IAsyncOperationWithProgress<global::Windows.Web.Http.HttpResponseMessage, global::Windows.Web.Http.HttpProgress> a1, 
-					global::Windows.Foundation.AsyncStatus a2);
-
-		public delegate int AddrOfTarget90(
-					global::System.IntPtr a0, 
-					global::Windows.Foundation.IAsyncOperationWithProgress_A_Windows_Web_Http_HttpResponseMessage_j_Windows_Web_Http_HttpProgress_V___Impl.Vtbl** a1, 
-					global::Windows.Web.Http.HttpProgress__Impl.UnsafeType a2);
-
-		public delegate int AddrOfTarget91(
-					global::System.IntPtr a0, 
-					global::Windows.Foundation.IAsyncOperationWithProgress_A_Windows_Web_Http_HttpResponseMessage_j_Windows_Web_Http_HttpProgress_V___Impl.Vtbl** a1, 
-					global::Windows.Foundation.AsyncStatus a2);
-
-		public delegate void AddrOfTarget92(
-					global::System.__ComObject a0, 
-					global::Windows.Foundation.IAsyncAction a1);
-
-		public delegate int AddrOfTarget93(
-					global::System.IntPtr a0, 
-					ulong* a1);
-
-		public delegate int AddrOfTarget94(
-					global::System.IntPtr a0, 
-					ulong a1);
-
-		public delegate int AddrOfTarget95(
-					global::System.IntPtr a0, 
-					ulong a1, 
-					global::Windows.Storage.Streams.IInputStream__Impl.Vtbl*** a2);
-
-		public delegate int AddrOfTarget96(
-					global::System.IntPtr a0, 
-					ulong a1, 
-					global::Windows.Storage.Streams.IOutputStream__Impl.Vtbl*** a2);
-
-		public delegate int AddrOfTarget97(
-					global::System.IntPtr a0, 
-					global::Windows.Storage.Streams.IRandomAccessStream__Impl.Vtbl*** a1);
-
-		public delegate int AddrOfTarget98(
+		public delegate int AddrOfTarget25(
 					global::System.IntPtr a0, 
 					global::Windows.Storage.Streams.IBuffer__Impl.Vtbl** a1, 
 					global::Windows.Foundation.IAsyncOperationWithProgress_A_uint_j_uint_V___Impl.Vtbl*** a2);
 
-		public delegate int AddrOfTarget99(
+		public delegate int AddrOfTarget26(
 					global::System.IntPtr a0, 
 					global::Windows.Foundation.IAsyncOperation_A_bool_V___Impl.Vtbl*** a1);
 
-		public delegate void AddrOfTarget100(
+		public delegate void AddrOfTarget27(
 					global::System.__ComObject a0, 
 					global::Windows.Foundation.IAsyncOperationWithProgress<uint, uint> a1, 
 					uint a2);
 
-		public delegate void AddrOfTarget101(
+		public delegate void AddrOfTarget28(
 					global::System.__ComObject a0, 
 					global::Windows.Foundation.IAsyncOperationWithProgress<uint, uint> a1, 
 					global::Windows.Foundation.AsyncStatus a2);
 
-		public delegate int AddrOfTarget102(
+		public delegate int AddrOfTarget29(
 					global::System.IntPtr a0, 
 					global::Windows.Foundation.AsyncOperationProgressHandler_A_uint_j_uint_V___Impl.Vtbl** a1);
 
-		public delegate int AddrOfTarget103(
+		public delegate int AddrOfTarget30(
 					global::System.IntPtr a0, 
 					global::Windows.Foundation.AsyncOperationProgressHandler_A_uint_j_uint_V___Impl.Vtbl*** a1);
 
-		public delegate int AddrOfTarget104(
+		public delegate int AddrOfTarget31(
 					global::System.IntPtr a0, 
 					global::Windows.Foundation.AsyncOperationWithProgressCompletedHandler_A_uint_j_uint_V___Impl.Vtbl** a1);
 
-		public delegate int AddrOfTarget105(
+		public delegate int AddrOfTarget32(
 					global::System.IntPtr a0, 
 					global::Windows.Foundation.AsyncOperationWithProgressCompletedHandler_A_uint_j_uint_V___Impl.Vtbl*** a1);
 
-		public delegate int AddrOfTarget106(
+		public delegate int AddrOfTarget33(
 					global::System.IntPtr a0, 
 					global::Windows.Foundation.IAsyncOperationWithProgress_A_uint_j_uint_V___Impl.Vtbl** a1, 
 					uint a2);
 
-		public delegate int AddrOfTarget107(
+		public delegate int AddrOfTarget34(
 					global::System.IntPtr a0, 
 					global::Windows.Foundation.IAsyncOperationWithProgress_A_uint_j_uint_V___Impl.Vtbl** a1, 
 					global::Windows.Foundation.AsyncStatus a2);
 
-		public delegate void AddrOfTarget108(
+		public delegate void AddrOfTarget35(
 					global::System.__ComObject a0, 
 					global::Windows.Foundation.IAsyncOperation<bool> a1, 
 					global::Windows.Foundation.AsyncStatus a2);
 
-		public delegate int AddrOfTarget109(
+		public delegate int AddrOfTarget36(
 					global::System.IntPtr a0, 
 					global::Windows.Foundation.AsyncOperationCompletedHandler_A_bool_V___Impl.Vtbl** a1);
 
-		public delegate int AddrOfTarget110(
+		public delegate int AddrOfTarget37(
 					global::System.IntPtr a0, 
 					global::Windows.Foundation.AsyncOperationCompletedHandler_A_bool_V___Impl.Vtbl*** a1);
 
-		public delegate void AddrOfTarget111(
+		public delegate void AddrOfTarget38(
 					global::System.__ComObject a0, 
 					global::Windows.Foundation.IAsyncOperation<global::Windows.Storage.Streams.IRandomAccessStream> a1, 
 					global::Windows.Foundation.AsyncStatus a2);
 
-		public delegate void AddrOfTarget112(
+		public delegate int AddrOfTarget39(
+					global::System.IntPtr a0, 
+					global::Windows.ApplicationModel.Background.IBackgroundTaskInstance__Impl.Vtbl** a1);
+
+		public delegate void AddrOfTarget40(
+					global::System.__ComObject a0, 
+					global::Windows.ApplicationModel.Background.IBackgroundTaskInstance a1, 
+					global::Windows.ApplicationModel.Background.BackgroundTaskCancellationReason a2);
+
+		public delegate int AddrOfTarget41(
+					global::System.IntPtr a0, 
+					global::Windows.ApplicationModel.Background.IBackgroundTaskInstance__Impl.Vtbl** a1, 
+					global::Windows.ApplicationModel.Background.BackgroundTaskCancellationReason a2);
+
+		public delegate int AddrOfTarget42(
+					global::System.IntPtr a0, 
+					float* a1);
+
+		public delegate int AddrOfTarget43(
+					global::System.IntPtr a0, 
+					double* a1);
+
+		public delegate int AddrOfTarget44(
+					global::System.IntPtr a0, 
+					global::System.DateTimeOffset__Impl.UnsafeType* a1);
+
+		public delegate int AddrOfTarget45(
+					global::System.IntPtr a0, 
+					int* a1);
+
+		public delegate int AddrOfTarget46(
+					global::System.IntPtr a0, 
+					float a1, 
+					float a2, 
+					float a3, 
+					float* a4);
+
+		public delegate int AddrOfTarget47(
+					global::System.IntPtr a0, 
+					int a1, 
+					int* a2);
+
+		public delegate int AddrOfTarget48(
+					global::System.IntPtr a0, 
+					float a1);
+
+		public delegate int AddrOfTarget49(
+					global::System.IntPtr a0, 
+					double a1);
+
+		public delegate int AddrOfTarget50(
+					global::System.IntPtr a0, 
+					global::System.DateTimeOffset__Impl.UnsafeType a1);
+
+		public delegate int AddrOfTarget51(
+					global::System.IntPtr a0, 
+					int a1);
+
+		public delegate int AddrOfTarget52(
+					global::System.IntPtr a0, 
+					global::Windows.Devices.Gpio.IGpioPin__Impl.Vtbl*** a1);
+
+		public delegate int AddrOfTarget53(
+					global::System.IntPtr a0, 
+					sbyte a1);
+
+		public delegate int AddrOfTarget54(
+					global::System.IntPtr a0, 
+					global::Windows.Devices.Gpio.IGpioPin__Impl.Vtbl** a1);
+
+		public delegate void AddrOfTarget55(
+					global::System.__ComObject a0, 
+					global::Windows.System.Threading.ThreadPoolTimer a1);
+
+		public delegate int AddrOfTarget56(
+					global::System.IntPtr a0, 
+					global::Windows.System.Threading.IThreadPoolTimer__Impl.Vtbl** a1);
+
+		public delegate int AddrOfTarget57(
+					global::System.IntPtr a0, 
+					uint a1, 
+					global::System.Type__Impl.UnsafeType* a2);
+
+		public delegate int AddrOfTarget58(
+					global::System.IntPtr a0, 
+					global::System.Collections.Generic.IReadOnlyList_A_System_Type_V___Impl.Vtbl*** a1);
+
+		public delegate int AddrOfTarget59(
+					global::System.IntPtr a0, 
+					global::System.Type__Impl.UnsafeType a1, 
+					uint* a2, 
+					sbyte* a3);
+
+		public delegate int AddrOfTarget60(
+					global::System.IntPtr a0, 
+					uint a1, 
+					global::System.Type__Impl.UnsafeType a2);
+
+		public delegate int AddrOfTarget61(
+					global::System.IntPtr a0, 
+					global::System.Type__Impl.UnsafeType a1);
+
+		public delegate int AddrOfTarget62(global::System.IntPtr a0);
+
+		public delegate int AddrOfTarget63(
+					global::System.IntPtr a0, 
+					uint a1, 
+					uint a2, 
+					global::System.Type__Impl.UnsafeType* a3, 
+					uint* a4);
+
+		public delegate int AddrOfTarget64(
+					global::System.IntPtr a0, 
+					uint a1, 
+					global::System.DateTimeOffset__Impl.UnsafeType* a2, 
+					uint* a3);
+
+		public delegate int AddrOfTarget65(
+					global::System.IntPtr a0, 
+					uint a1, 
+					global::System.DateTimeOffset__Impl.UnsafeType* a2);
+
+		public delegate int AddrOfTarget66(
+					global::System.IntPtr a0, 
+					global::System.Collections.Generic.IReadOnlyList_A_System_DateTimeOffset_V___Impl.Vtbl*** a1);
+
+		public delegate int AddrOfTarget67(
+					global::System.IntPtr a0, 
+					global::System.DateTimeOffset__Impl.UnsafeType a1, 
+					uint* a2, 
+					sbyte* a3);
+
+		public delegate int AddrOfTarget68(
+					global::System.IntPtr a0, 
+					uint a1, 
+					global::System.DateTimeOffset__Impl.UnsafeType a2);
+
+		public delegate int AddrOfTarget69(
+					global::System.IntPtr a0, 
+					uint a1, 
+					uint a2, 
+					global::System.DateTimeOffset__Impl.UnsafeType* a3, 
+					uint* a4);
+
+		public delegate int AddrOfTarget70(
+					global::System.IntPtr a0, 
+					global::System.TimeSpan* a1);
+
+		public delegate int AddrOfTarget71(
+					global::System.IntPtr a0, 
+					uint a1, 
+					global::System.TimeSpan* a2, 
+					uint* a3);
+
+		public delegate int AddrOfTarget72(
+					global::System.IntPtr a0, 
+					uint a1, 
+					global::System.TimeSpan* a2);
+
+		public delegate int AddrOfTarget73(
+					global::System.IntPtr a0, 
+					global::System.Collections.Generic.IReadOnlyList_A_System_TimeSpan_V___Impl.Vtbl*** a1);
+
+		public delegate int AddrOfTarget74(
+					global::System.IntPtr a0, 
+					global::System.TimeSpan a1, 
+					uint* a2, 
+					sbyte* a3);
+
+		public delegate int AddrOfTarget75(
+					global::System.IntPtr a0, 
+					uint a1, 
+					global::System.TimeSpan a2);
+
+		public delegate int AddrOfTarget76(
+					global::System.IntPtr a0, 
+					global::System.TimeSpan a1);
+
+		public delegate int AddrOfTarget77(
+					global::System.IntPtr a0, 
+					uint a1, 
+					uint a2, 
+					global::System.TimeSpan* a3, 
+					uint* a4);
+
+		public delegate int AddrOfTarget78(
+					global::System.IntPtr a0, 
+					global::System.Runtime.InteropServices.HSTRING a1, 
+					global::System.Runtime.InteropServices.__vtable_IInspectable** a2);
+
+		public delegate int AddrOfTarget79(
+					global::System.IntPtr a0, 
+					global::System.Runtime.InteropServices.HSTRING a1, 
+					sbyte* a2);
+
+		public delegate int AddrOfTarget80(
+					global::System.IntPtr a0, 
+					global::System.Collections.Generic.IReadOnlyDictionary_A_string_j_System_Object_V___Impl.Vtbl*** a1);
+
+		public delegate int AddrOfTarget81(
+					global::System.IntPtr a0, 
+					global::System.Runtime.InteropServices.HSTRING a1, 
+					global::System.Runtime.InteropServices.__vtable_IInspectable* a2, 
+					sbyte* a3);
+
+		public delegate int AddrOfTarget82(
+					global::System.IntPtr a0, 
+					global::System.Runtime.InteropServices.HSTRING a1);
+
+		public delegate int AddrOfTarget83(
+					global::System.IntPtr a0, 
+					global::System.Collections.Generic.KeyValuePair_A_string_j_System_Object_V___Impl.Vtbl*** a1);
+
+		public delegate int AddrOfTarget84(
+					global::System.IntPtr a0, 
+					uint a1, 
+					global::System.Collections.Generic.KeyValuePair_A_string_j_System_Object_V___Impl.Vtbl*** a2, 
+					uint* a3);
+
+		public delegate int AddrOfTarget85(
+					global::System.IntPtr a0, 
+					global::System.Collections.Generic.IReadOnlyDictionary_A_string_j_System_Object_V___Impl.Vtbl*** a1, 
+					global::System.Collections.Generic.IReadOnlyDictionary_A_string_j_System_Object_V___Impl.Vtbl*** a2);
+
+		public delegate int AddrOfTarget86(
+					global::System.IntPtr a0, 
+					global::System.Runtime.InteropServices.__vtable_IInspectable* a1, 
+					global::System.Runtime.InteropServices.__vtable_IInspectable** a2);
+
+		public delegate int AddrOfTarget87(
+					global::System.IntPtr a0, 
+					global::System.Runtime.InteropServices.__vtable_IInspectable* a1, 
+					sbyte* a2);
+
+		public delegate int AddrOfTarget88(
+					global::System.IntPtr a0, 
+					global::System.Collections.Generic.IReadOnlyDictionary_A_System_Object_j_System_Object_V___Impl.Vtbl*** a1);
+
+		public delegate int AddrOfTarget89(
+					global::System.IntPtr a0, 
+					global::System.Runtime.InteropServices.__vtable_IInspectable* a1, 
+					global::System.Runtime.InteropServices.__vtable_IInspectable* a2, 
+					sbyte* a3);
+
+		public delegate int AddrOfTarget90(
+					global::System.IntPtr a0, 
+					global::System.Runtime.InteropServices.__vtable_IInspectable* a1);
+
+		public delegate int AddrOfTarget91(
+					global::System.IntPtr a0, 
+					global::System.Runtime.InteropServices.__vtable_IInspectable** a1);
+
+		public delegate int AddrOfTarget92(
+					global::System.IntPtr a0, 
+					global::System.Collections.Generic.KeyValuePair_A_System_Object_j_System_Object_V___Impl.Vtbl*** a1);
+
+		public delegate int AddrOfTarget93(
+					global::System.IntPtr a0, 
+					uint a1, 
+					global::System.Collections.Generic.KeyValuePair_A_System_Object_j_System_Object_V___Impl.Vtbl*** a2, 
+					uint* a3);
+
+		public delegate int AddrOfTarget94(
+					global::System.IntPtr a0, 
+					global::System.Collections.Generic.IReadOnlyDictionary_A_System_Object_j_System_Object_V___Impl.Vtbl*** a1, 
+					global::System.Collections.Generic.IReadOnlyDictionary_A_System_Object_j_System_Object_V___Impl.Vtbl*** a2);
+
+		public delegate int AddrOfTarget95(
+					global::System.IntPtr a0, 
+					global::Windows.Foundation.Collections.IObservableMap_A_string_j_string_V___Impl.Vtbl** a1, 
+					global::Windows.Foundation.Collections.IMapChangedEventArgs_A_string_V___Impl.Vtbl** a2);
+
+		public delegate void AddrOfTarget96(
+					global::System.__ComObject a0, 
+					global::Windows.Foundation.Collections.IObservableMap<string, string> a1, 
+					global::Windows.Foundation.Collections.IMapChangedEventArgs<string> a2);
+
+		public delegate int AddrOfTarget97(
+					global::System.IntPtr a0, 
+					global::Windows.Foundation.IAsyncAction__Impl.Vtbl** a1);
+
+		public delegate void AddrOfTarget98(global::System.__ComObject a0);
+
+		public delegate void AddrOfTarget99(
+					global::System.__ComObject a0, 
+					global::Windows.Foundation.IAsyncOperation<global::Windows.Storage.IStorageItem> a1, 
+					global::Windows.Foundation.AsyncStatus a2);
+
+		public delegate int AddrOfTarget100(
+					global::System.IntPtr a0, 
+					global::System.Runtime.InteropServices.__vtable_IInspectable* a1, 
+					global::Windows.Foundation.Diagnostics.ITracingStatusChangedEventArgs__Impl.Vtbl** a2);
+
+		public delegate void AddrOfTarget101(
+					global::System.__ComObject a0, 
+					global::Windows.Foundation.IAsyncOperation<global::Windows.Devices.Enumeration.DeviceInformationCollection> a1, 
+					global::Windows.Foundation.AsyncStatus a2);
+
+		public delegate void AddrOfTarget102(
+					global::System.__ComObject a0, 
+					global::Windows.Foundation.IAsyncOperation<global::Windows.Devices.Spi.SpiDevice> a1, 
+					global::Windows.Foundation.AsyncStatus a2);
+
+		public delegate void AddrOfTarget103(
 					global::System.__ComObject a0, 
 					global::Windows.Foundation.IAsyncOperation<global::Windows.Storage.StorageFile> a1, 
 					global::Windows.Foundation.AsyncStatus a2);
 
+		public delegate void AddrOfTarget104(
+					global::System.__ComObject a0, 
+					global::Windows.Foundation.IAsyncOperation<global::Windows.Devices.I2c.I2cDevice> a1, 
+					global::Windows.Foundation.AsyncStatus a2);
+
+		public delegate void AddrOfTarget105(
+					global::System.__ComObject a0, 
+					global::Windows.Foundation.IAsyncOperationWithProgress<global::Windows.Storage.Streams.IInputStream, ulong> a1, 
+					ulong a2);
+
+		public delegate void AddrOfTarget106(
+					global::System.__ComObject a0, 
+					global::Windows.Foundation.IAsyncOperationWithProgress<global::Windows.Storage.Streams.IInputStream, ulong> a1, 
+					global::Windows.Foundation.AsyncStatus a2);
+
+		public delegate int AddrOfTarget107(
+					global::System.IntPtr a0, 
+					global::Windows.Foundation.IAsyncOperationWithProgress_A_Windows_Storage_Streams_IInputStream_j_ulong_V___Impl.Vtbl** a1, 
+					ulong a2);
+
+		public delegate int AddrOfTarget108(
+					global::System.IntPtr a0, 
+					global::Windows.Foundation.IAsyncOperationWithProgress_A_Windows_Storage_Streams_IInputStream_j_ulong_V___Impl.Vtbl** a1, 
+					global::Windows.Foundation.AsyncStatus a2);
+
+		public delegate void AddrOfTarget109(
+					global::System.__ComObject a0, 
+					global::Windows.Foundation.IAsyncOperationWithProgress<global::Windows.Web.Http.HttpResponseMessage, global::Windows.Web.Http.HttpProgress> a1, 
+					global::Windows.Web.Http.HttpProgress a2);
+
+		public delegate void AddrOfTarget110(
+					global::System.__ComObject a0, 
+					global::Windows.Foundation.IAsyncOperationWithProgress<global::Windows.Web.Http.HttpResponseMessage, global::Windows.Web.Http.HttpProgress> a1, 
+					global::Windows.Foundation.AsyncStatus a2);
+
+		public delegate int AddrOfTarget111(
+					global::System.IntPtr a0, 
+					global::Windows.Foundation.IAsyncOperationWithProgress_A_Windows_Web_Http_HttpResponseMessage_j_Windows_Web_Http_HttpProgress_V___Impl.Vtbl** a1, 
+					global::Windows.Web.Http.HttpProgress__Impl.UnsafeType a2);
+
+		public delegate int AddrOfTarget112(
+					global::System.IntPtr a0, 
+					global::Windows.Foundation.IAsyncOperationWithProgress_A_Windows_Web_Http_HttpResponseMessage_j_Windows_Web_Http_HttpProgress_V___Impl.Vtbl** a1, 
+					global::Windows.Foundation.AsyncStatus a2);
+
 		public delegate void AddrOfTarget113(
+					global::System.__ComObject a0, 
+					global::Windows.Foundation.IAsyncAction a1);
+
+		public delegate void AddrOfTarget114(
 					global::System.__ComObject a0, 
 					object a1, 
 					global::Windows.Foundation.Diagnostics.TracingStatusChangedEventArgs a2);
 
-		public delegate int AddrOfTarget114(
+		public delegate int AddrOfTarget115(
 					global::System.IntPtr a0, 
 					global::System.Collections.Generic.KeyValuePair_A_string_j_System_Collections_Generic_IEnumerable_A_string_V__V___Impl.Vtbl*** a1);
 
-		public delegate int AddrOfTarget115(
+		public delegate int AddrOfTarget116(
 					global::System.IntPtr a0, 
 					uint a1, 
 					global::System.Collections.Generic.KeyValuePair_A_string_j_System_Collections_Generic_IEnumerable_A_string_V__V___Impl.Vtbl*** a2, 
 					uint* a3);
 
-		public delegate int AddrOfTarget116(
+		public delegate int AddrOfTarget117(
 					global::System.IntPtr a0, 
 					uint* a1, 
 					global::System.DateTimeOffset__Impl.UnsafeType** a2);
 
-		public delegate int AddrOfTarget117(
+		public delegate int AddrOfTarget118(
 					global::System.IntPtr a0, 
 					uint* a1, 
 					global::System.TimeSpan** a2);
 
-		public delegate int AddrOfTarget118(
+		public delegate int AddrOfTarget119(
 					global::System.IntPtr a0, 
 					uint a1, 
 					global::System.Runtime.InteropServices.__vtable_IInspectable** a2);
 
-		public delegate int AddrOfTarget119(
+		public delegate int AddrOfTarget120(
 					global::System.IntPtr a0, 
 					global::System.Collections.Generic.IReadOnlyList_A_System_Uri_V___Impl.Vtbl*** a1);
 
-		public delegate int AddrOfTarget120(
+		public delegate int AddrOfTarget121(
 					global::System.IntPtr a0, 
 					global::System.Runtime.InteropServices.__vtable_IInspectable* a1, 
 					uint* a2, 
 					sbyte* a3);
 
-		public delegate int AddrOfTarget121(
+		public delegate int AddrOfTarget122(
 					global::System.IntPtr a0, 
 					uint a1, 
 					global::System.Runtime.InteropServices.__vtable_IInspectable* a2);
 
-		public delegate int AddrOfTarget122(
+		public delegate int AddrOfTarget123(
 					global::System.IntPtr a0, 
 					uint a1, 
 					uint a2, 
 					global::System.Runtime.InteropServices.__vtable_IInspectable** a3, 
 					uint* a4);
 
-		public delegate int AddrOfTarget123(
+		public delegate int AddrOfTarget124(
 					global::System.IntPtr a0, 
 					uint a1, 
 					global::System.Runtime.InteropServices.__vtable_IInspectable** a2, 
 					uint* a3);
 
-		public delegate int AddrOfTarget124(
+		public delegate int AddrOfTarget125(
 					global::System.IntPtr a0, 
 					global::Windows.Web.Http.HttpStatusCode* a1);
 
-		public delegate void AddrOfTarget125(
+		public delegate void AddrOfTarget126(
 					global::System.__ComObject a0, 
 					global::Windows.Foundation.IAsyncOperation<global::System.Collections.Generic.IReadOnlyList<global::Windows.Security.Cryptography.Certificates.Certificate>> a1, 
 					global::Windows.Foundation.AsyncStatus a2);
 
-		public delegate int AddrOfTarget126(
-					global::System.IntPtr a0, 
-					global::System.IntPtr* a1);
-
 		public delegate int AddrOfTarget127(
 					global::System.IntPtr a0, 
-					global::System.Guid* a1, 
-					global::System.IntPtr a2, 
-					uint a3, 
-					global::System.IntPtr a4, 
-					uint a5, 
-					global::System.Guid* a6);
+					global::System.IntPtr* a1);
 
 		public delegate int AddrOfTarget128(
 					global::System.IntPtr a0, 
@@ -1899,9 +1905,18 @@ namespace McgInterop
 					uint a3, 
 					global::System.IntPtr a4, 
 					uint a5, 
-					uint* a6);
+					global::System.Guid* a6);
 
 		public delegate int AddrOfTarget129(
+					global::System.IntPtr a0, 
+					global::System.Guid* a1, 
+					global::System.IntPtr a2, 
+					uint a3, 
+					global::System.IntPtr a4, 
+					uint a5, 
+					uint* a6);
+
+		public delegate int AddrOfTarget130(
 					global::System.IntPtr a0, 
 					global::System.IntPtr a1, 
 					global::System.Guid* a2, 
@@ -1910,38 +1925,38 @@ namespace McgInterop
 					global::System.IntPtr a5, 
 					uint a6);
 
-		public delegate int AddrOfTarget130(
+		public delegate int AddrOfTarget131(
 					global::System.IntPtr a0, 
 					global::System.IntPtr a1, 
 					global::System.Guid* a2, 
 					global::System.IntPtr* a3);
 
-		public delegate object AddrOfTarget131<T>(
+		public delegate int AddrOfTarget132<T>(
+					global::Windows.Foundation.AsyncOperationCompletedHandler<T> a0, 
+					global::Windows.Foundation.IAsyncOperation<T> a1, 
+					global::Windows.Foundation.AsyncStatus a2);
+
+		public delegate object AddrOfTarget133<T>(
 					global::System.Collections.Generic.IReadOnlyList<T> a0, 
 					global::System.Runtime.InteropServices.Toolbox.IList_Oper a1, 
 					ref int a2, 
 					ref T a3);
 
-		public delegate object AddrOfTarget132<T>(global::System.Collections.Generic.IEnumerable<T> a0);
+		public delegate object AddrOfTarget134<T>(global::System.Collections.Generic.IEnumerable<T> a0);
 
-		public delegate int AddrOfTarget133<T>(
-					global::Windows.Foundation.AsyncOperationCompletedHandler<T> a0, 
-					global::Windows.Foundation.IAsyncOperation<T> a1, 
-					global::Windows.Foundation.AsyncStatus a2);
+		public delegate object AddrOfTarget135(object a0);
 
-		public delegate object AddrOfTarget134(object a0);
+		public delegate object AddrOfTarget136(global::System.__ComObject a0);
 
-		public delegate object AddrOfTarget135(global::System.__ComObject a0);
-
-		public delegate int AddrOfTarget136(
+		public delegate int AddrOfTarget137(
 					ref global::Windows.Web.Http.HttpProgress a0, 
 					out global::Windows.Web.Http.HttpProgress__Impl.UnsafeType a1);
 
-		public delegate int AddrOfTarget137(
+		public delegate int AddrOfTarget138(
 					ref global::Windows.Web.Http.HttpProgress__Impl.UnsafeType a0, 
 					out global::Windows.Web.Http.HttpProgress a1);
 
-		public delegate void AddrOfTarget138(ref global::Windows.Web.Http.HttpProgress__Impl.UnsafeType a0);
+		public delegate void AddrOfTarget139(ref global::Windows.Web.Http.HttpProgress__Impl.UnsafeType a0);
 	}
 
 	#region Helpers emitted by MCG

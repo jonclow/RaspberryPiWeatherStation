@@ -7,6 +7,8 @@ using WeatherStationHeadless.Sparkfun;
 using Windows.Devices.Gpio;
 using System.Diagnostics;
 using System.Linq;
+using Windows.Storage;
+using System.Threading.Tasks;
 
 
 // The Background Application template is documented at http://go.microsoft.com/fwlink/?LinkID=533884&clcid=0x409
@@ -52,6 +54,11 @@ namespace WeatherStationHeadless
         List<double> windSpeedList = new List<double>();
         List<int> windDirectionList = new List<int>();
 
+        //Webcam 
+        private WebCamHelper webcam = new WebCamHelper();
+        private ThreadPoolTimer pictureTimer;
+        private readonly int pictureTimerSeconds = 780;
+
 
         public async void Run(IBackgroundTaskInstance taskInstance)
         {
@@ -67,11 +74,17 @@ namespace WeatherStationHeadless
             //Initialise the MCP3008 ADC Chip
             mcp3008.Initialize();
 
+            //Initialise an attached web cam ready to take an image
+            await webcam.InitialiseCamerAsync();
+
             // Create a timer-initiated ThreadPool task to read data from I2C
             i2cTimer = ThreadPoolTimer.CreatePeriodicTimer(PopulateWeatherData, TimeSpan.FromSeconds(i2cReadIntervalSeconds));
 
             //Create a timer-initiated ThreadPool task to read data from the interrupt handler counting the wind instrument activity
             windInterruptSample = ThreadPoolTimer.CreatePeriodicTimer(MeasureWindEventData, TimeSpan.FromSeconds(windInterruptSampleInterval));
+
+            //Create a timer driven thread pool task to take a photo.
+            pictureTimer = ThreadPoolTimer.CreatePeriodicTimer(TakePhoto, TimeSpan.FromSeconds(pictureTimerSeconds));
 
             // Task cancellation handler, release our deferral there 
             taskInstance.Canceled += OnCanceled;
@@ -163,7 +176,7 @@ namespace WeatherStationHeadless
 */
                     shield.BlueLEDPin.Write(Windows.Devices.Gpio.GpioPinValue.Low);
 
-                    // Push the WeatherData to the MySql database associated with the website
+                    // Push the WeatherData to the website for use via HTTP Post request
                     sendMessage(weatherData.Altitude, weatherData.BarometricPressure, weatherData.CelsiusTemperature,
                         weatherData.FahrenheitTemperature, weatherData.Humidity, weatherData.LightSensorVoltage, weatherData.WindDirection, 
                         weatherData.WindSpeed, weatherData.PeakWindSpeed, weatherData.RainFall); 
@@ -267,12 +280,35 @@ namespace WeatherStationHeadless
             return avgDirection;
         }
 
-        
-        
-       
-        
+        //Method to use the WebCamHelper object to take a photo.  Returns a storage file which is then passed to send method to HTTP POST to website.
+        private async void TakePhoto(ThreadPoolTimer timer)
+        {
+           
+            try
+            {
+                StorageFile photo = await webcam.CapturePhoto();
+                if (photo != null)
+                {
+                    sendPhoto(photo);
+                }
+                else
+                {
+                    Debug.WriteLine("Cannot take a photo.  The camera has not been initialised properly, or has failed.");
+                }
+            }
+            //If there has been an issue with the camera, the webcam object reference will be null.
+            catch (NullReferenceException nre)
+            {
+                webcam = new WebCamHelper();
+                await webcam.InitialiseCamerAsync();
+                Debug.WriteLine("Error: {0}", nre.ToString());
+            }
 
-
-
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error: {0}", ex.ToString());
+            }
+        }
+        }
     }
-}
+
