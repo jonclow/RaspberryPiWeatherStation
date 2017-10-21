@@ -274,7 +274,7 @@ namespace WeatherStationHeadless
         //Method to use the WebCamHelper object to take a photo.  Returns a storage file which is then passed to send method to HTTP POST to website.
         private async void TakePhoto(ThreadPoolTimer timer)
         {
-            if (webcam.initialised)
+            if (webcam.IsInitialised())
             {
                 try
                 {

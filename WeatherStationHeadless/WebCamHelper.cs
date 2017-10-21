@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Windows.Devices.Enumeration;
 using Windows.Media.Capture;
@@ -14,7 +11,7 @@ namespace WeatherStationHeadless
     class WebCamHelper
     {
         public MediaCapture mediaCapture;
-        public bool initialised = false;
+        private bool initialised = false;
 
         /// <summary>
         /// Asynchronously looks for and initialises an attached Webcamera.  Allows access to live feed and photo capture.
