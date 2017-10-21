@@ -7,6 +7,7 @@ using WeatherStationHeadless.Sparkfun;
 using Windows.Devices.Gpio;
 using System.Diagnostics;
 using System.Linq;
+using Windows.Storage;
 
 
 // The Background Application template is documented at http://go.microsoft.com/fwlink/?LinkID=533884&clcid=0x409
@@ -52,6 +53,11 @@ namespace WeatherStationHeadless
         List<double> windSpeedList = new List<double>();
         List<int> windDirectionList = new List<int>();
 
+        //Webcam 
+        private WebCamHelper webcam = new WebCamHelper();
+        private ThreadPoolTimer pictureTimer;
+        private readonly int pictureTimerSeconds = 780;
+
 
         public async void Run(IBackgroundTaskInstance taskInstance)
         {
@@ -67,11 +73,17 @@ namespace WeatherStationHeadless
             //Initialise the MCP3008 ADC Chip
             mcp3008.Initialize();
 
+            //Initialise an attached web cam ready to take an image
+            await webcam.InitialiseCamerAsync();
+
             // Create a timer-initiated ThreadPool task to read data from I2C
             i2cTimer = ThreadPoolTimer.CreatePeriodicTimer(PopulateWeatherData, TimeSpan.FromSeconds(i2cReadIntervalSeconds));
 
             //Create a timer-initiated ThreadPool task to read data from the interrupt handler counting the wind instrument activity
             windInterruptSample = ThreadPoolTimer.CreatePeriodicTimer(MeasureWindEventData, TimeSpan.FromSeconds(windInterruptSampleInterval));
+
+            //Create a timer driven thread pool task to take a photo.
+            pictureTimer = ThreadPoolTimer.CreatePeriodicTimer(TakePhoto, TimeSpan.FromSeconds(pictureTimerSeconds));
 
             // Task cancellation handler, release our deferral there 
             taskInstance.Canceled += OnCanceled;
@@ -96,7 +108,7 @@ namespace WeatherStationHeadless
                 if ((evalutateRainSensorTime > badDataTime))//ignore switch bounce glitches less than 10ms
                 {
                     rainLastTime = rainReadTime;  //reset the last read tie to evaluate if sensor information is good (more than 10 millisecond interval)
-                    rainClicks += 0.2794; //each click represents 0.2794mm of rain (or 0.011 inches).  This total is added to the database every 2 min then zeroed.
+                    rainClicks += 0.2; //Update: Optical sensor set to 0.2mm per switch.  Legacy tipping bucket: each click represents 0.2794mm of rain (or 0.011 inches).  This total is added to the database every 2 min then zeroed.
                 }
             }
         }
@@ -152,18 +164,10 @@ namespace WeatherStationHeadless
 
                     int cdsReadVal = mcp3008.ReadADC(ADCChannel);
                     weatherData.LightSensorVoltage = mcp3008.ADCToVoltage(cdsReadVal);
-/*
-                    Debug.WriteLine(String.Format("Read values {0} ", cdsReadVal));
-                    Debug.WriteLine(String.Format("Voltages {0}", weatherData.LightSensorVoltage));
-                    Debug.WriteLine(String.Format("Time span between interrupt {0}", evalutateWindSensorTime.ToString()));
-                    Debug.WriteLine(String.Format("Wind Direction {0}", weatherData.WindDirection));
-                    Debug.WriteLine(String.Format("Wind Speed {0}", weatherData.WindSpeed));
-                    Debug.WriteLine(String.Format("Maximum Wind Speed {0}", weatherData.PeakWindSpeed));
-                    Debug.WriteLine(String.Format("Rain {0}", weatherData.RainFall));
-*/
-                    shield.BlueLEDPin.Write(Windows.Devices.Gpio.GpioPinValue.Low);
 
-                    // Push the WeatherData to the MySql database associated with the website
+                    shield.BlueLEDPin.Write(GpioPinValue.Low);
+
+                    // Push the WeatherData to the website for use via HTTP Post request
                     sendMessage(weatherData.Altitude, weatherData.BarometricPressure, weatherData.CelsiusTemperature,
                         weatherData.FahrenheitTemperature, weatherData.Humidity, weatherData.LightSensorVoltage, weatherData.WindDirection, 
                         weatherData.WindSpeed, weatherData.PeakWindSpeed, weatherData.RainFall); 
@@ -267,12 +271,42 @@ namespace WeatherStationHeadless
             return avgDirection;
         }
 
-        
-        
-       
-        
+        //Method to use the WebCamHelper object to take a photo.  Returns a storage file which is then passed to send method to HTTP POST to website.
+        private async void TakePhoto(ThreadPoolTimer timer)
+        {
+            if (webcam.IsInitialised())
+            {
+                try
+                {
+                    StorageFile photo = await webcam.CapturePhoto();
+                    if (photo != null)
+                    {
+                        sendPhoto(photo);
+                    }
+                    else
+                    {
+                        Debug.WriteLine("Cannot take a photo.  The camera has not been initialised properly, or has failed.");
+                    }
+                }
+                //If there has been an issue with the camera, the webcam object reference will be null.
+                catch (NullReferenceException nre)
+                {
+                    webcam = new WebCamHelper();
+                    await webcam.InitialiseCamerAsync();
+                    Debug.WriteLine("Error: {0}", nre.ToString());
+                }
 
-
-
+                catch (Exception ex)
+                {
+                    webcam.Cleanup();
+                    Debug.WriteLine("Error: {0}", ex.ToString());
+                }
+            } else
+            {
+                webcam = new WebCamHelper();
+                await webcam.InitialiseCamerAsync();
+            }
+        }
+        }
     }
-}
+

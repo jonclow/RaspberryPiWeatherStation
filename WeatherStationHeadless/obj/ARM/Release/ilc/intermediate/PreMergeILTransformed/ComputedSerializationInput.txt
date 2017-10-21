@@ -1,2 +1,0 @@
-"/t:WeatherStationHeadless.WeatherData,WeatherStationHeadless,xml"
-"/t:WeatherStationHeadless.WeatherData,WeatherStationHeadless,json"
