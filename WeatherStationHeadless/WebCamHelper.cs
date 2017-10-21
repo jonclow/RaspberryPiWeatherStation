@@ -14,7 +14,7 @@ namespace WeatherStationHeadless
     class WebCamHelper
     {
         public MediaCapture mediaCapture;
-        private bool initialised = false;
+        public bool initialised = false;
 
         /// <summary>
         /// Asynchronously looks for and initialises an attached Webcamera.  Allows access to live feed and photo capture.
@@ -131,6 +131,19 @@ namespace WeatherStationHeadless
         public bool IsInitialised()
         {
             return initialised;
+        }
+
+        ///<summary>
+        ///Cleanup helper if an error is encountered.  Dispose the camera object and start again on next timer initiated capture.
+        /// </summary>
+        public void Cleanup()
+        {
+            if (mediaCapture != null)
+            {
+                mediaCapture.Dispose();
+                mediaCapture = null;
+                initialised = false;
+            }
         }
     }
 
