@@ -3,49 +3,35 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Net.Http;
-using System.Collections.Generic;
 using System.Runtime.Serialization.Json;
 using Windows.Storage;
-using System.Threading;
-using Windows.Storage.Streams;
-using Windows.UI.Xaml.Media.Imaging;
 using System.Threading.Tasks;
 using System.Net.Http.Headers;
+using Windows.Devices.Gpio;
 
 namespace WeatherStationHeadless
 {
     public sealed partial class StartupTask
     {
         /// <summary>
-        /// Send the snapshot sensor data to the Web Application database using the HTTP POST Request protocol and an HttpClient
+        /// Send a datapoint to the API
         /// </summary>
         /// <param name="message"></param>
-        private async void sendMessage(float Altitude, float BarometricPressure, float CelsiusTemperature, float FahrenheitTemperature,
-                                 float Humidity, float LightReading, int WindDirection, double WindSpeed, double PeakWindSpeed, double RainFall)
+        private async void sendMessage(float alt, float baro, float ctemp, float ftemp, float humidity, long readTime, float light, int windDir, double wind, double peakWind, double rain)
         {
-            shield.GreenLEDPin.Write(Windows.Devices.Gpio.GpioPinValue.High);
+            shield.GreenLEDPin.Write(GpioPinValue.High);
+            WeatherData wx = new WeatherData(alt, baro, ctemp, ftemp, humidity, readTime, light, windDir, wind, peakWind, rain);
+            string requestPayload = ToJson(wx);
 
             try
             {
                 using (var client = new HttpClient())
                 {
-                    var values = new Dictionary<string, string>
-                {
-                   { "Alt", Altitude.ToString() },
-                    {"Pressure", BarometricPressure.ToString() },
-                    {"CTemp", CelsiusTemperature.ToString() },
-                    {"FTemp", FahrenheitTemperature.ToString() },
-                    {"Humidity", Humidity.ToString() },
-                    {"Light", LightReading.ToString() },
-                    {"WindDir", WindDirection.ToString() },
-                    {"WindSpeed", WindSpeed.ToString() },
-                    {"PeakWindSpeed", PeakWindSpeed.ToString() },
-                    {"Rainfall", RainFall.ToString() }
-                };
 
-                    var content = new FormUrlEncodedContent(values);
-
-                    var response = await client.PostAsync("http://www.redmercury.co.nz/update/store", content); //Put URL here for POST target.
+                    var response = await client.PostAsync(
+                        "http://api.redmercury.co.nz/weather/data", 
+                        new StringContent(requestPayload, Encoding.UTF8, "application/json")
+                        );
 
                     var responseString = await response.Content.ReadAsStringAsync();
 
@@ -64,7 +50,7 @@ namespace WeatherStationHeadless
                 Debug.WriteLine("Error: {0}", e.ToString());
             }
 
-            shield.GreenLEDPin.Write(Windows.Devices.Gpio.GpioPinValue.Low);
+            shield.GreenLEDPin.Write(GpioPinValue.Low);
         }
 
         /// <summary>
@@ -119,11 +105,11 @@ namespace WeatherStationHeadless
         /// ToJson function is used to convert sensor data into a JSON string to be sent to Azure Event Hub
         /// </summary>
         /// <returns>JSon String containing all info for sensor data</returns>
-        public string ToJson()
+        public string ToJson(WeatherData obj)
          {
              DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(WeatherData));
              MemoryStream ms = new MemoryStream();
-             ser.WriteObject(ms, this);
+             ser.WriteObject(ms, obj);
              string json = Encoding.UTF8.GetString(ms.ToArray(), 0, (int)ms.Length);
 
              return json;

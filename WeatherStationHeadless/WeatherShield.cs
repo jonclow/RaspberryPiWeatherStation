@@ -36,8 +36,8 @@ namespace WeatherStationHeadless
             private bool enable = false;
 
             // I2C Devices
-            private I2cDevice htdu21d;  // Humidity and temperature sensor
-            private I2cDevice mpl3115a2;  // Altitue, pressure and temperature sensor
+            private I2cDevice htdu21d;    // Humidity and temperature
+            private I2cDevice mpl3115a2;  // Altitue and pressure
 
             /// <summary>
             /// Blue status LED on shield
@@ -60,12 +60,13 @@ namespace WeatherStationHeadless
             public GpioPin GreenLEDPin { get; private set; }
 
             ///<summary>
-            ///Wind Speed read pin connected to 3 on shield
+            ///Wind Speed read pin connected to 3 on the weather shield
+            ///Wind direction is read via the ADC
             /// </summary>
             public GpioPin WindSpeedPin { get; set; }
 
             ///<summary>
-            ///Rain read pin connected to 2 on shield
+            ///Rain read pin connected to optical sensor from pin 26
             /// </summary>
             public GpioPin RainPin { get; set; }
 
@@ -90,13 +91,9 @@ namespace WeatherStationHeadless
                 GpioController gpio = GpioController.GetDefault();
 
                 /*
-                 * Test to see if the GPIO controller is available.
+                 * Test to see if the GPIO controller is available - or able to be driven from the running environment.
                  *
-                 * If the GPIO controller is not available, this is
-                 * a good indicator the app has been deployed to a
-                 * computing environment that is not capable of
-                 * controlling the weather shield. Therefore we
-                 * will disable the weather shield functionality to
+                 * If not, disable the weather shield functionality to
                  * handle the failure case gracefully. This allows
                  * the invoking application to remain deployable
                  * across the Universal Windows Platform.
@@ -110,10 +107,6 @@ namespace WeatherStationHeadless
 
                 /*
                  * Initialize the blue LED and set to "off"
-                 *
-                 * Instantiate the blue LED pin object
-                 * Write the GPIO pin value of low on the pin
-                 * Set the GPIO pin drive mode to output
                  */
                 BlueLEDPin = gpio.OpenPin(STATUS_LED_BLUE_PIN, GpioSharingMode.Exclusive);
                 BlueLEDPin.Write(GpioPinValue.Low);
@@ -121,10 +114,6 @@ namespace WeatherStationHeadless
 
                 /*
                  * Initialize the green LED and set to "off"
-                 * 
-                 * Instantiate the green LED pin object
-                 * Write the GPIO pin value of low on the pin
-                 * Set the GPIO pin drive mode to output
                  */
                 GreenLEDPin = gpio.OpenPin(STATUS_LED_GREEN_PIN, GpioSharingMode.Exclusive);
                 GreenLEDPin.Write(GpioPinValue.Low);

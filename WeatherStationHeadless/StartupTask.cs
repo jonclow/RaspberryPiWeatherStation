@@ -24,7 +24,6 @@ namespace WeatherStationHeadless
         private string mutexId = "WeatherStation";
         private WeatherShield shield = new WeatherShield();
         private BackgroundTaskDeferral taskDeferral;
-        private WeatherData weatherData = new WeatherData();
         //Hard coded altitude of the weather station for use in the correction to seal level pressure.
         private float locationAlt = 340;
         //For the weathershield, set to 5V even though powered from 3.3V
@@ -54,9 +53,9 @@ namespace WeatherStationHeadless
         List<int> windDirectionList = new List<int>();
 
         //Webcam 
-        private WebCamHelper webcam = new WebCamHelper();
-        private ThreadPoolTimer pictureTimer;
-        private readonly int pictureTimerSeconds = 780;
+        //private WebCamHelper webcam = new WebCamHelper();
+        //private ThreadPoolTimer pictureTimer;
+        //private readonly int pictureTimerSeconds = 780;
 
 
         public async void Run(IBackgroundTaskInstance taskInstance)
@@ -74,7 +73,7 @@ namespace WeatherStationHeadless
             mcp3008.Initialize();
 
             //Initialise an attached web cam ready to take an image
-            await webcam.InitialiseCamerAsync();
+            //await webcam.InitialiseCamerAsync();
 
             // Create a timer-initiated ThreadPool task to read data from I2C
             i2cTimer = ThreadPoolTimer.CreatePeriodicTimer(PopulateWeatherData, TimeSpan.FromSeconds(i2cReadIntervalSeconds));
@@ -83,7 +82,7 @@ namespace WeatherStationHeadless
             windInterruptSample = ThreadPoolTimer.CreatePeriodicTimer(MeasureWindEventData, TimeSpan.FromSeconds(windInterruptSampleInterval));
 
             //Create a timer driven thread pool task to take a photo.
-            pictureTimer = ThreadPoolTimer.CreatePeriodicTimer(TakePhoto, TimeSpan.FromSeconds(pictureTimerSeconds));
+            //pictureTimer = ThreadPoolTimer.CreatePeriodicTimer(TakePhoto, TimeSpan.FromSeconds(pictureTimerSeconds));
 
             // Task cancellation handler, release our deferral there 
             taskInstance.Canceled += OnCanceled;
@@ -137,8 +136,7 @@ namespace WeatherStationHeadless
             taskDeferral.Complete();
         }
 
-        //Snapshot of weather data at the interval stipulated in the threadpool timer.  Calls send method which exports info to the 
-        //website using HttpClient and POST protocol.
+        //Snapshot of weather data at the interval stipulated in the threadpool timer.  Calls send method which exports to the API 
         private void PopulateWeatherData(ThreadPoolTimer timer)
         {
             bool hasMutex = false;
@@ -148,29 +146,23 @@ namespace WeatherStationHeadless
                 hasMutex = mutex.WaitOne(1000);
                 if (hasMutex)
                 {
-                    weatherData.TimeStamp = DateTimeOffset.Now;
 
-                    shield.BlueLEDPin.Write(Windows.Devices.Gpio.GpioPinValue.High);
+                    shield.BlueLEDPin.Write(GpioPinValue.High);
 
-                    weatherData.Altitude = shield.Altitude;
-                    weatherData.CelsiusTemperature = shield.Temperature;
-                    weatherData.FahrenheitTemperature = (weatherData.CelsiusTemperature * 9 / 5) + 32;
-                    weatherData.Humidity = shield.Humidity;
-                    weatherData.WindSpeed = windSpeedList.Average();
-                    weatherData.PeakWindSpeed = windSpeedList.Max();
-                    weatherData.WindDirection = calcWindDirection();
-                    weatherData.RainFall = rainClicks;
-                    weatherData.BarometricPressure = weatherData.getSeaLevelPressure(shield.Pressure, weatherData.CelsiusTemperature, locationAlt);
+                    var TimeStamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds(); //DateTimeOffset.Now;
+                    var BarometricPressure = WeatherData.getSeaLevelPressure(shield.Pressure, shield.Temperature, locationAlt);
+                    var FahrenheitTemperature = (shield.Temperature * 9 / 5) + 32;
+                    var WindDirection = calcWindDirection();
 
                     int cdsReadVal = mcp3008.ReadADC(ADCChannel);
-                    weatherData.LightSensorVoltage = mcp3008.ADCToVoltage(cdsReadVal);
+                    var LightSensorVoltage = mcp3008.ADCToVoltage(cdsReadVal);
+                    var WindSpeed = windSpeedList.Average();
+                    var PeakWindSpeed = windSpeedList.Max();
+
+                    sendMessage(shield.Altitude, BarometricPressure, shield.Temperature, FahrenheitTemperature, shield.Humidity, TimeStamp, LightSensorVoltage, WindDirection, 
+                        WindSpeed, PeakWindSpeed, rainClicks);
 
                     shield.BlueLEDPin.Write(GpioPinValue.Low);
-
-                    // Push the WeatherData to the website for use via HTTP Post request
-                    sendMessage(weatherData.Altitude, weatherData.BarometricPressure, weatherData.CelsiusTemperature,
-                        weatherData.FahrenheitTemperature, weatherData.Humidity, weatherData.LightSensorVoltage, weatherData.WindDirection, 
-                        weatherData.WindSpeed, weatherData.PeakWindSpeed, weatherData.RainFall); 
                 }
             }
             finally
@@ -204,7 +196,7 @@ namespace WeatherStationHeadless
                     double tempWindSpeed = 0;
                     int cdsReadVal2 = mcp3008.ReadADC(ADCWindDirChannel);
 
-                    tempWindDirection = weatherData.getWindDirection(cdsReadVal2);
+                    tempWindDirection = WeatherData.getWindDirection(cdsReadVal2);
                     if (tempWindDirection != -1)
                     {
                         windDirectionList.Add(tempWindDirection);  //Add it to the list which gets averaged (circular average) every 120seconds
@@ -272,41 +264,41 @@ namespace WeatherStationHeadless
         }
 
         //Method to use the WebCamHelper object to take a photo.  Returns a storage file which is then passed to send method to HTTP POST to website.
-        private async void TakePhoto(ThreadPoolTimer timer)
-        {
-            if (webcam.IsInitialised())
-            {
-                try
-                {
-                    StorageFile photo = await webcam.CapturePhoto();
-                    if (photo != null)
-                    {
-                        sendPhoto(photo);
-                    }
-                    else
-                    {
-                        Debug.WriteLine("Cannot take a photo.  The camera has not been initialised properly, or has failed.");
-                    }
-                }
-                //If there has been an issue with the camera, the webcam object reference will be null.
-                catch (NullReferenceException nre)
-                {
-                    webcam = new WebCamHelper();
-                    await webcam.InitialiseCamerAsync();
-                    Debug.WriteLine("Error: {0}", nre.ToString());
-                }
+        //private async void TakePhoto(ThreadPoolTimer timer)
+        //{
+        //    if (webcam.IsInitialised())
+        //    {
+        //        GetPhoto();
+        //    } else
+        //    {
+        //        webcam = new WebCamHelper();
+        //        await webcam.InitialiseCamerAsync();
+        //        GetPhoto();
+        //    }
+        //}
 
-                catch (Exception ex)
-                {
-                    webcam.Cleanup();
-                    Debug.WriteLine("Error: {0}", ex.ToString());
-                }
-            } else
-            {
-                webcam = new WebCamHelper();
-                await webcam.InitialiseCamerAsync();
-            }
-        }
-        }
+        //private async void GetPhoto()
+        //{
+        //    try
+        //    {
+        //        StorageFile photo = await webcam.CapturePhoto();
+        //        if (photo != null)
+        //        {
+        //            sendPhoto(photo);
+        //        }
+        //        else
+        //        {
+        //            Debug.WriteLine("Cannot take a photo.  The camera has not been initialised properly, or has failed.");
+        //            webcam.Cleanup();
+        //        }
+        //    }
+        //    //If there has been an issue with the camera, the webcam object reference will be null.
+        //    catch (Exception ex)
+        //    {
+        //        webcam.Cleanup();
+        //        Debug.WriteLine("Error: {0}", ex.ToString());
+        //    }
+        //}
     }
+}
 

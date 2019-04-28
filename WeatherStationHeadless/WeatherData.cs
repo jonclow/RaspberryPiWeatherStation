@@ -1,75 +1,61 @@
 ﻿using System;
-using System.IO;
-using System.Runtime.Serialization.Json;
-using System.Text;
-using System.Xml;
-using System.Xml.Serialization;
-
+using System.Runtime.Serialization;
 
 namespace WeatherStationHeadless
 {
+    [DataContract]
     public sealed class WeatherData
     {
-        public WeatherData()
-       {
-        //    TimeStamp = DateTimeOffset.Now;
-       }
-  
-        public float Altitude { get; set; }
-        public float BarometricPressure { get; set; }
-        public float CelsiusTemperature { get; set; }
-        public float FahrenheitTemperature { get; set; }
-        public float Humidity { get; set; }
-        public DateTimeOffset TimeStamp { get; set; }
-        public float LightSensorVoltage { get; set; }
-        public int WindDirection { get; set; }
-        public double WindSpeed { get; set; }
-        public double PeakWindSpeed { get; set; }
-        public double RainFall { get; set; }
-
-        public string JSON
+        public WeatherData(float alt, float baro, float degc, float degf, float humid, long time, float light, int windDir, double windSp, double pkWindSp, double rain)
         {
-            get
-            {
-                var jsonSerializer = new DataContractJsonSerializer(typeof(WeatherData));
-                using (MemoryStream strm = new MemoryStream())
-                {
-                    jsonSerializer.WriteObject(strm, this);
-                    byte[] buf = strm.ToArray();
-                    return Encoding.UTF8.GetString(buf, 0, buf.Length);
-                }
-            }
+            altitude = alt;
+            barometricPressure = baro;
+            celsiusTemperature = degc;
+            fahrenheitTemperature = degf;
+            humidity = humid;
+            readTime = time;
+            lightSensorVoltage = light;
+            windDirection = windDir;
+            windSpeed = windSp;
+            peakWindSpeed = pkWindSp;
+            rainFall = rain;
         }
 
-        public string XML
-        {
-            get
-            {
-                var xmlserializer = new XmlSerializer(typeof(WeatherData));
-                var stringWriter = new StringWriter();
-                using (var writer = XmlWriter.Create(stringWriter))
-                {
-                    xmlserializer.Serialize(writer, this, new XmlSerializerNamespaces());
-                    return stringWriter.ToString();
-                }
-            }
-        }
+        [DataMember]
+        public float altitude { get; set; }
 
-        public string HTML
-        {
-            get
-            {
-                return string.Format(@"<html><head><title>My Weather Station</title></head><body>
-                                    Time:{0}<br />
-                                    Temperature (C/F): {1:N2}/{2:N2}<br />
-                                    Barometric Pressure (kPa): {3:N4}<br />
-                                    Relative Humidity (%): {4:N2}<br /></body></html>",
-                                    TimeStamp, CelsiusTemperature, FahrenheitTemperature, (BarometricPressure / 1000), Humidity);
-            }
-        }
+        [DataMember]
+        public float barometricPressure { get; set; }
+
+        [DataMember]
+        public float celsiusTemperature { get; set; }
+
+        [DataMember]
+        public float fahrenheitTemperature { get; set; }
+
+        [DataMember]
+        public float humidity { get; set; }
+
+        [DataMember]
+        public long readTime { get; set; }
+
+        [DataMember]
+        public float lightSensorVoltage { get; set; }
+
+        [DataMember]
+        public int windDirection { get; set; }
+
+        [DataMember]
+        public double windSpeed { get; set; }
+
+        [DataMember]
+        public double peakWindSpeed { get; set; }
+
+        [DataMember]
+        public double rainFall { get; set; }
 
         //Conversion of the local barometric pressure to sea level pressure.  
-        public float getSeaLevelPressure(float baroPress, float temp, float alt)
+        public static float getSeaLevelPressure(float baroPress, float temp, float alt)
         {
             float pressure;
             double bottomLine;
@@ -92,7 +78,7 @@ namespace WeatherStationHeadless
         }
 
         //Method which takes analog wind vane reading and converts to bearing.
-        public int getWindDirection(int analogRead)
+        public static int getWindDirection(int analogRead)
         {
             int directionTrue = 0;
             
